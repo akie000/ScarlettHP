@@ -11,10 +11,12 @@
    <style>
      * { margin: 0; padding: 0; box-sizing: border-box; }
      html, body { height: 100%; }
-     body { font-family: 'Noto Serif JP', serif; overflow-x: hidden; }
-     .app-wrapper { height: 100%; width: 100%; overflow-y: auto; display: flex; flex-direction: column; }
-     .elegant-title { font-family: 'Playfair Display', serif; font-weight: 600; letter-spacing: 0.05em; }
+     body { font-family: 'Noto Serif JP', serif; overflow-x: hidden; color: #1a1410; }
+     .app-wrapper { height: 100%; width: 100%; overflow-y: auto; display: flex; flex-direction: column; background-color: #f5f5f5; color: #1a1410; }
+     .elegant-title { font-family: 'Playfair Display', serif; font-weight: 600; letter-spacing: 0.05em; color: #1a1410; }
      .transition-smooth { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+     /* Ensure text is always visible */
+     h1, h2, h3, h4, h5, h6, p, span, li, a { color: inherit; }
    </style>
    <style>body { box-sizing: border-box; }</style>
    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
@@ -22,64 +24,64 @@
  <body class="antialiased">
    <div id="app" class="app-wrapper">
      <!-- Navigation -->
-     <nav id="navbar" class="fixed top-0 w-full z-50 px-6 md:px-12 py-4 transition-smooth">
+     <nav id="navbar" class="fixed top-0 w-full z-50 px-6 md:px-12 py-4 transition-smooth" style="background-color: rgba(245,245,245,0.95); backdrop-filter: blur(12px);">
        <div class="max-w-7xl mx-auto flex justify-between items-center">
          <div class="flex items-center gap-3">
-           <h1 id="nav-logo" class="elegant-title text-2xl md:text-3xl font-semibold"></h1>
+           <h1 id="nav-logo" class="elegant-title text-2xl md:text-3xl font-semibold" style="color: #1a1410;">Scarlett</h1>
          </div>
-         <div class="hidden md:flex gap-12 items-center"><a href="#about" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-ja">サロン紹介</a> <a href="#about" class="text-sm [...]
+         <div class="hidden md:flex gap-12 items-center"><a href="#about" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-ja" style="color: #1a1410;">サロン紹介</a> <a href="#menu" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-ja" style="color: #1a1410;">メニュー</a> <a href="#info" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-ja" style="color: #1a1410;">お問い合わせ</a> <button id="lang-toggle" class="px-4 py-2 rounded-lg font-medium text-sm transition-colors hover:opacity-70 nav-ja" style="background: rgba(184, 149, 106, 0.1); color: #b8956a;">EN</button> <a href="#about" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-en hidden" style="color: #1a1410;">About</a> <a href="#menu" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-en hidden" style="color: #1a1410;">Menu</a> <a href="#info" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-en hidden" style="color: #1a1410;">Contact</a> <button id="lang-toggle" class="px-4 py-2 rounded-lg font-medium text-sm transition-colors hover:opacity-70 nav-en hidden" style="background: rgba(184, 149, 106, 0.1); color: #b8956a;">日本語</button>
          </div>
          <div class="md:hidden">
-           <button id="mobile-menu-btn" class="p-2"> <i data-lucide="menu"></i> </button>
+           <button id="mobile-menu-btn" class="p-2" style="color: #1a1410;"> <i data-lucide="menu"></i> </button>
            <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 mt-2 mx-4 rounded-xl shadow-lg z-40" style="background: rgba(255,255,255,0.98); border: 1px solid rgba(0,0,0,0.1);">
-             <div class="flex flex-col p-4 gap-2"><a href="#about" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-ja">サロン紹介</a> <a href="#about" class="px-4 py-3 rounded-l[...]
-               <div class="border-t my-2" style="border-color: rgba(0,0,0,0.1);"></div><button id="mobile-lang-toggle" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 text-left font-mediu[...]
+             <div class="flex flex-col p-4 gap-2"><a href="#about" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-ja" style="color: #1a1410;">サロン紹介</a> <a href="#menu" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-ja" style="color: #1a1410;">メニュー</a> <a href="#info" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-ja" style="color: #1a1410;">お問い合わせ</a> <a href="#about" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-en hidden" style="color: #1a1410;">About</a> <a href="#menu" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-en hidden" style="color: #1a1410;">Menu</a> <a href="#info" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-en hidden" style="color: #1a1410;">Contact</a>
+               <div class="border-t my-2" style="border-color: rgba(0,0,0,0.1);"></div><button id="mobile-lang-toggle" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 text-left font-medium text-sm nav-ja" style="color: #b8956a;">EN に切り替え</button> <button id="mobile-lang-toggle" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 text-left font-medium text-sm nav-en hidden" style="color: #b8956a;">日本語に切り替え</button>
              </div>
            </div>
          </div>
        </div>
-     </nav><!-- Fixed CTA Button --> <button id="nav-cta" class="fixed top-40 right-6 md:top-52 md:right-12 px-8 py-3 rounded-full font-semibold text-base transition-all transform hover:scale-105 ac[...]
+     </nav><!-- Fixed CTA Button --> <button id="nav-cta" class="fixed top-40 right-6 md:top-52 md:right-12 px-8 py-3 rounded-full font-semibold text-base transition-all transform hover:scale-105 active:scale-95 z-40 text-white" style="background-color: #b8956a;">ご予約</button>
      <section id="hero" class="relative pt-32 md:pt-40 pb-20 px-6 md:px-12 min-h-screen flex flex-col justify-center items-center text-center overflow-hidden">
        <div class="relative z-10 max-w-4xl">
-         <p class="text-sm tracking-[0.3em] mb-6 opacity-70 uppercase" style="background: linear-gradient(135deg, #d4af37, #c4a64a); color: white; display: inline-block; padding: 8px 20px; border-radi[...]
-         <h2 id="hero-title" class="elegant-title text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">美しさは内面から理想の肌へ</h2>
-         <p id="hero-desc" class="text-lg md:text-xl opacity-80 mb-12 leading-relaxed max-w-2xl mx-auto">Scarlett 北参道は、「結果・安心・安全」を大切にしながら、その日の肌・身体・心に寄[[...]
-         <div class="flex flex-col sm:flex-row gap-4 justify-center"><button id="main-cta" class="px-8 py-3.5 rounded-full font-semibold text-base shadow-lg transition-all transform hover:-translate-y[...]
+         <p class="text-sm tracking-[0.3em] mb-6 opacity-70 uppercase" style="background: linear-gradient(135deg, #d4af37, #c4a64a); color: white; display: inline-block; padding: 8px 20px; border-radius: 20px;">Premium Salon</p>
+         <h2 id="hero-title" class="elegant-title text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight" style="color: #1a1410;">美しさは内面から理想の肌へ</h2>
+         <p id="hero-desc" class="text-lg md:text-xl opacity-80 mb-12 leading-relaxed max-w-2xl mx-auto" style="color: #1a1410;">Scarlett 北参道は、「結果・安心・安全」を大切にしながら、その日の肌・身体・心に寄り添うケアをご提供します。</p>
+         <div class="flex flex-col sm:flex-row gap-4 justify-center"><button id="main-cta" class="px-8 py-3.5 rounded-full font-semibold text-base shadow-lg transition-all transform hover:-translate-y-1 active:translate-y-0 text-white" style="background-color: #b8956a;">ご予約はこちら</button>
          </div>
        </div>
      </section><!-- About Section -->
      <section id="about" class="py-24 md:py-32 px-6 md:px-12">
        <div class="max-w-5xl mx-auto">
          <div class="text-center mb-16">
-           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">About Scarlett</p>
-           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">About Scarlett</p>
-           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-ja">北参道の隠れ家サロン</h3>
-           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-en hidden">Hidden Gem Salon in Kita-Sando</h3>
-           <p class="text-lg opacity-75 leading-relaxed max-w-3xl mx-auto nav-ja">Scarlett 北参道は、「結果・安心・安全」を大切にしながら、その日の肌・身体・心に寄[[...]
-           <p class="text-lg opacity-75 leading-relaxed max-w-3xl mx-auto nav-en hidden">Scarlett Kita-Sando provides care that aligns with your skin, body, and heart of the day, prioritizing "results,[...]
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja" style="color: #1a1410;">About Scarlett</p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden" style="color: #1a1410;">About Scarlett</p>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-ja" style="color: #1a1410;">北参道の隠れ家サロン</h3>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-en hidden" style="color: #1a1410;">Hidden Gem Salon in Kita-Sando</h3>
+           <p class="text-lg opacity-75 leading-relaxed max-w-3xl mx-auto nav-ja" style="color: #1a1410;">Scarlett 北参道は、「結果・安心・安全」を大切にしながら、その日の肌・身体・心に寄り添うケアをご提供します。完全予約制のプライベート空間で、医師監修による安心のサービスをお受けいただけます。</p>
+           <p class="text-lg opacity-75 leading-relaxed max-w-3xl mx-auto nav-en hidden" style="color: #1a1410;">Scarlett Kita-Sando provides care that aligns with your skin, body, and heart of the day, prioritizing "results, peace of mind, and safety." In a completely private, reservation-only space, enjoy services under medical supervision.</p>
          </div>
          <div class="grid grid-cols-2 gap-4 mt-16 max-w-xl mx-auto">
            <div class="p-4 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-             <p class="text-2xl font-bold mb-1">100%</p>
-             <p class="text-xs opacity-70 nav-ja">完全予約制</p>
-             <p class="text-xs opacity-70 nav-en hidden">Reservation Only</p>
+             <p class="text-2xl font-bold mb-1" style="color: #1a1410;">100%</p>
+             <p class="text-xs opacity-70 nav-ja" style="color: #1a1410;">完全予約制</p>
+             <p class="text-xs opacity-70 nav-en hidden" style="color: #1a1410;">Reservation Only</p>
            </div>
            <div class="p-4 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-             <p class="text-2xl font-bold mb-1">30秒</p>
-             <p class="text-xs opacity-70 nav-ja">駅から徒歩</p>
-             <p class="text-xs opacity-70 nav-en hidden">Walk from Station</p>
+             <p class="text-2xl font-bold mb-1" style="color: #1a1410;">30秒</p>
+             <p class="text-xs opacity-70 nav-ja" style="color: #1a1410;">駅から徒歩</p>
+             <p class="text-xs opacity-70 nav-en hidden" style="color: #1a1410;">Walk from Station</p>
            </div>
            <div class="p-4 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-             <p class="text-2xl font-bold mb-1 nav-ja">個室</p>
-             <p class="text-2xl font-bold mb-1 nav-en hidden">Private</p>
-             <p class="text-xs opacity-70 nav-ja">完全プライベート</p>
-             <p class="text-xs opacity-70 nav-en hidden">Completely Private</p>
+             <p class="text-2xl font-bold mb-1 nav-ja" style="color: #1a1410;">個室</p>
+             <p class="text-2xl font-bold mb-1 nav-en hidden" style="color: #1a1410;">Private</p>
+             <p class="text-xs opacity-70 nav-ja" style="color: #1a1410;">完全プライベート</p>
+             <p class="text-xs opacity-70 nav-en hidden" style="color: #1a1410;">Completely Private</p>
            </div>
            <div class="p-4 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-             <p class="text-2xl font-bold mb-1 nav-ja">結果</p>
-             <p class="text-2xl font-bold mb-1 nav-en hidden">Results</p>
-             <p class="text-xs opacity-70 nav-ja">重視のケア</p>
-             <p class="text-xs opacity-70 nav-en hidden">Focused Care</p>
+             <p class="text-2xl font-bold mb-1 nav-ja" style="color: #1a1410;">結果</p>
+             <p class="text-2xl font-bold mb-1 nav-en hidden" style="color: #1a1410;">Results</p>
+             <p class="text-xs opacity-70 nav-ja" style="color: #1a1410;">重視のケア</p>
+             <p class="text-xs opacity-70 nav-en hidden" style="color: #1a1410;">Focused Care</p>
            </div>
          </div>
        </div>
@@ -87,29 +89,29 @@
      <section id="concept" class="py-24 md:py-32 px-6 md:px-12">
        <div class="max-w-5xl mx-auto">
          <div class="text-center mb-16">
-           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">Concept</p>
-           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">Concept</p>
-           <h3 id="concept-title" class="elegant-title text-4xl md:text-5xl mb-8"></h3>
-           <p id="concept-text" class="text-lg opacity-75 leading-relaxed max-w-3xl mx-auto"></p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja" style="color: #1a1410;">Concept</p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden" style="color: #1a1410;">Concept</p>
+           <h3 id="concept-title" class="elegant-title text-4xl md:text-5xl mb-8" style="color: #1a1410;">医師提携による安心と確実な結果</h3>
+           <p id="concept-text" class="text-lg opacity-75 leading-relaxed max-w-3xl mx-auto" style="color: #1a1410;">Scarlettは、顧問医師提携による安心のもと、安全性と最速の肌改善効果を追求するフェイシャル特化サロンです。</p>
          </div><!-- Strengths Grid -->
          <div class="grid md:grid-cols-3 gap-8 mt-20">
            <div class="p-8 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-             <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(0,0,0,0.05);"><i data-lucide="sparkles" class="w-7 h-7"></i>
+             <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(0,0,0,0.05);"><i data-lucide="sparkles" class="w-7 h-7" style="color: #b8956a;"></i>
              </div>
-             <h4 id="strength1_title" class="font-semibold text-lg mb-3"></h4>
-             <p class="text-sm opacity-70 leading-relaxed">フェイシャルと小顔矯正に特化した技術で、確実な肌質改善を実現します。</p>
+             <h4 id="strength1_title" class="font-semibold text-lg mb-3" style="color: #1a1410;">フェイシャル肌質改善に特化</h4>
+             <p class="text-sm opacity-70 leading-relaxed" style="color: #1a1410;">フェイシャルと小顔矯正に特化した技術で、確実な肌質改善を実現します。</p>
            </div>
            <div class="p-8 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-             <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(0,0,0,0.05);"><i data-lucide="shield-check" class="w-7 h-7"></i>
+             <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(0,0,0,0.05);"><i data-lucide="shield-check" class="w-7 h-7" style="color: #b8956a;"></i>
              </div>
-             <h4 id="strength2_title" class="font-semibold text-lg mb-3"></h4>
-             <p class="text-sm opacity-70 leading-relaxed">医療提携により、安心・安全なプロフェッショナルケアを一貫して提供します。</p>
+             <h4 id="strength2_title" class="font-semibold text-lg mb-3" style="color: #1a1410;">医療提携による安心</h4>
+             <p class="text-sm opacity-70 leading-relaxed" style="color: #1a1410;">医療提携により、安心・安全なプロフェッショナルケアを一貫して提供します。</p>
            </div>
            <div class="p-8 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-             <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(0,0,0,0.05);"><i data-lucide="zap" class="w-7 h-7"></i>
+             <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(0,0,0,0.05);"><i data-lucide="zap" class="w-7 h-7" style="color: #b8956a;"></i>
              </div>
-             <h4 id="strength3_title" class="font-semibold text-lg mb-3"></h4>
-             <p class="text-sm opacity-70 leading-relaxed">即効性の高いメニューで、毎回の施術で確かな変化を実感できます。</p>
+             <h4 id="strength3_title" class="font-semibold text-lg mb-3" style="color: #1a1410;">即効性の高いメニュー</h4>
+             <p class="text-sm opacity-70 leading-relaxed" style="color: #1a1410;">即効性の高いメニューで、毎回の施術で確かな変化を実感できます。</p>
            </div>
          </div>
        </div>
@@ -117,18 +119,18 @@
      <section id="doctor" class="py-24 md:py-32 px-6 md:px-12" style="background: linear-gradient(135deg, rgba(0,0,0,0.02), rgba(0,0,0,0.05));">
        <div class="max-w-5xl mx-auto">
          <div class="text-center mb-16">
-           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">Medical Partnership</p>
-           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">Medical Partnership</p>
-           <h3 class="elegant-title text-4xl md:text-5xl mb-4 nav-ja">医師との提携について</h3>
-           <h3 class="elegant-title text-4xl md:text-5xl mb-4 nav-en hidden">About Medical Partnership</h3>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja" style="color: #1a1410;">Medical Partnership</p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden" style="color: #1a1410;">Medical Partnership</p>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-4 nav-ja" style="color: #1a1410;">医師との提携について</h3>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-4 nav-en hidden" style="color: #1a1410;">About Medical Partnership</h3>
          </div>
          <div class="grid md:grid-cols-2 gap-12 items-center">
            <div>
-             <h4 class="font-semibold text-2xl mb-6 nav-ja">医師監修による安心</h4>
-             <h4 class="font-semibold text-2xl mb-6 nav-en hidden">Safety Through Medical Supervision</h4>
-             <p class="text-lg opacity-80 leading-relaxed mb-6 nav-ja">Scarlettは医師の監修・提携のもと、最先端のスキンケア技術を導入しています。</p>
-             <p class="text-lg opacity-80 leading-relaxed mb-6 nav-en hidden">Scarlett introduces cutting-edge skincare technology under medical supervision and partnership.</p>
-             <ul class="space-y-4 text-base opacity-75">
+             <h4 class="font-semibold text-2xl mb-6 nav-ja" style="color: #1a1410;">医師監修による安心</h4>
+             <h4 class="font-semibold text-2xl mb-6 nav-en hidden" style="color: #1a1410;">Safety Through Medical Supervision</h4>
+             <p class="text-lg opacity-80 leading-relaxed mb-6 nav-ja" style="color: #1a1410;">Scarlettは医師の監修・提携のもと、最先端のスキンケア技術を導入しています。</p>
+             <p class="text-lg opacity-80 leading-relaxed mb-6 nav-en hidden" style="color: #1a1410;">Scarlett introduces cutting-edge skincare technology under medical supervision and partnership.</p>
+             <ul class="space-y-4 text-base opacity-75" style="color: #1a1410;">
                <li class="flex gap-3 nav-ja"><span>✓</span> <span>医学的根拠に基づいた施術</span></li>
                <li class="flex gap-3 nav-en hidden"><span>✓</span> <span>Evidence-based treatment</span></li>
                <li class="flex gap-3 nav-ja"><span>✓</span> <span>安全性を最優先した選別コスメ</span></li>
@@ -137,11 +139,11 @@
                <li class="flex gap-3 nav-en hidden"><span>✓</span> <span>Regular knowledge updates</span></li>
              </ul>
            </div>
-           <div class="p-8 rounded-2xl text-center" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);"><i data-lucide="award" class="w-20 h-20 mx-auto mb-6 opacity-40"></i>[...]
-             <h5 class="font-semibold text-xl mb-2 nav-ja">Dr. Recella ADS認定サロン</h5>
-             <h5 class="font-semibold text-xl mb-2 nav-en hidden">Dr. Recella ADS Certified Salon</h5>
-             <p class="text-sm opacity-70 mb-6 nav-ja">医師開発の高機能コスメ「Dr. Recella」のADS認定ディーラーサロンです。</p>
-             <p class="text-sm opacity-70 mb-6 nav-en hidden">Official ADS certified dealer salon for "Dr. Recella," a high-performance cosmetic developed by physicians.</p><a href="https://www.recella[...]
+           <div class="p-8 rounded-2xl text-center" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);"><i data-lucide="award" class="w-20 h-20 mx-auto mb-6 opacity-40" style="color: #b8956a;"></i>
+             <h5 class="font-semibold text-xl mb-2 nav-ja" style="color: #1a1410;">Dr. Recella ADS認定サロン</h5>
+             <h5 class="font-semibold text-xl mb-2 nav-en hidden" style="color: #1a1410;">Dr. Recella ADS Certified Salon</h5>
+             <p class="text-sm opacity-70 mb-6 nav-ja" style="color: #1a1410;">医師開発の高機能コスメ「Dr. Recella」のADS認定ディーラーサロンです。</p>
+             <p class="text-sm opacity-70 mb-6 nav-en hidden" style="color: #1a1410;">Official ADS certified dealer salon for "Dr. Recella," a high-performance cosmetic developed by physicians.</p><a href="https://www.recella.com" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-2 rounded-full text-sm font-semibold transition-all hover:opacity-70 text-white" style="background-color: #b8956a;">詳しく見る</a>
            </div>
          </div>
        </div>
@@ -149,73 +151,73 @@
      <section id="menu" class="py-24 md:py-32 px-6 md:px-12">
        <div class="max-w-6xl mx-auto">
          <div class="text-center mb-20">
-           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">MENU</p>
-           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">MENU</p>
-           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-ja">施術メニュー</h3>
-           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-en hidden">Treatment Menu</h3>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja" style="color: #1a1410;">MENU</p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden" style="color: #1a1410;">MENU</p>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-ja" style="color: #1a1410;">施術メニュー</h3>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-en hidden" style="color: #1a1410;">Treatment Menu</h3>
          </div>
          <div class="grid md:grid-cols-2 gap-8"><!-- Menu Item 1 -->
-           <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px[...]
+           <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px solid #b8956a;">
              <div class="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full opacity-10 transition-transform duration-500 group-hover:scale-150" style="background: #d4a574;"></div>
              <div class="relative">
                <div class="flex justify-between items-start mb-4">
                  <div>
-                   <p class="text-xs tracking-widest mb-2 opacity-60 nav-ja">人気</p>
-                   <p class="text-xs tracking-widest mb-2 opacity-60 nav-en hidden">POPULAR</p>
-                   <h4 class="font-semibold text-lg nav-ja">小顔コルギ</h4>
-                   <h4 class="font-semibold text-lg nav-en hidden">Facial Contouring</h4>
+                   <p class="text-xs tracking-widest mb-2 opacity-60 nav-ja" style="color: #1a1410;">人気</p>
+                   <p class="text-xs tracking-widest mb-2 opacity-60 nav-en hidden" style="color: #1a1410;">POPULAR</p>
+                   <h4 class="font-semibold text-lg nav-ja" style="color: #1a1410;">小顔コルギ</h4>
+                   <h4 class="font-semibold text-lg nav-en hidden" style="color: #1a1410;">Facial Contouring</h4>
                  </div><span class="font-semibold text-xl" style="color: #b8956a;">¥12,000</span>
                </div>
-               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja">骨から整える本格的な小顔矯正。むくみ・たるみにアプローチし、シャープなフェイスラインへ[...]
-               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden">Professional facial contouring that works from the bone structure. Reduces puffiness and sagging for a sharp jawline.</p>
-               <p class="text-xs opacity-60 nav-ja">施術時間：60分</p>
-               <p class="text-xs opacity-60 nav-en hidden">Duration: 60 minutes</p>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja" style="color: #1a1410;">骨から整える本格的な小顔矯正。むくみ・たるみにアプローチし、シャープなフェイスラインへ。</p>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden" style="color: #1a1410;">Professional facial contouring that works from the bone structure. Reduces puffiness and sagging for a sharp jawline.</p>
+               <p class="text-xs opacity-60 nav-ja" style="color: #1a1410;">施術時間：60分</p>
+               <p class="text-xs opacity-60 nav-en hidden" style="color: #1a1410;">Duration: 60 minutes</p>
              </div>
            </div><!-- Menu Item 2 -->
-           <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px[...]
+           <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px solid #b8956a;">
              <div class="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full opacity-10 transition-transform duration-500 group-hover:scale-150" style="background: #d4a574;"></div>
              <div class="relative">
                <div class="flex justify-between items-start mb-4">
                  <div>
-                   <h4 class="font-semibold text-lg nav-ja">美肌フェイシャル</h4>
-                   <h4 class="font-semibold text-lg nav-en hidden">Beauty Facial</h4>
+                   <h4 class="font-semibold text-lg nav-ja" style="color: #1a1410;">美肌フェイシャル</h4>
+                   <h4 class="font-semibold text-lg nav-en hidden" style="color: #1a1410;">Beauty Facial</h4>
                  </div><span class="font-semibold text-xl" style="color: #b8956a;">¥10,000</span>
                </div>
-               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja">お肌の状態に合わせたオーダーメイドのフェイシャル。透明感のある美しい肌へ導きます。</p>
-               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden">Customized facial tailored to your skin condition. Achieves radiant, beautiful skin.</p>
-               <p class="text-xs opacity-60 nav-ja">施術時間：50分</p>
-               <p class="text-xs opacity-60 nav-en hidden">Duration: 50 minutes</p>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja" style="color: #1a1410;">お肌の状態に合わせたオーダーメイドのフェイシャル。透明感のある美しい肌へ導きます。</p>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden" style="color: #1a1410;">Customized facial tailored to your skin condition. Achieves radiant, beautiful skin.</p>
+               <p class="text-xs opacity-60 nav-ja" style="color: #1a1410;">施術時間：50分</p>
+               <p class="text-xs opacity-60 nav-en hidden" style="color: #1a1410;">Duration: 50 minutes</p>
              </div>
            </div><!-- Menu Item 3 -->
-           <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px[...]
+           <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px solid #b8956a;">
              <div class="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full opacity-10 transition-transform duration-500 group-hover:scale-150" style="background: #d4a574;"></div>
              <div class="relative">
                <div class="flex justify-between items-start mb-4">
                  <div>
-                   <h4 class="font-semibold text-lg nav-ja">リフトアップケア</h4>
-                   <h4 class="font-semibold text-lg nav-en hidden">Lift-Up Care</h4>
+                   <h4 class="font-semibold text-lg nav-ja" style="color: #1a1410;">リフトアップケア</h4>
+                   <h4 class="font-semibold text-lg nav-en hidden" style="color: #1a1410;">Lift-Up Care</h4>
                  </div><span class="font-semibold text-xl" style="color: #b8956a;">¥15,000</span>
                </div>
-               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja">たるみが気になる方に。筋膜リリースとEMS機器を組み合わせた集中リフトアップ。</p>
-               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden">Intensive lift-up combining fascia release and EMS technology for those concerned with sagging.</p>
-               <p class="text-xs opacity-60 nav-ja">施術時間：75分</p>
-               <p class="text-xs opacity-60 nav-en hidden">Duration: 75 minutes</p>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja" style="color: #1a1410;">たるみが気になる方に。筋膜リリースとEMS機器を組み合わせた集中リフトアップ。</p>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden" style="color: #1a1410;">Intensive lift-up combining fascia release and EMS technology for those concerned with sagging.</p>
+               <p class="text-xs opacity-60 nav-ja" style="color: #1a1410;">施術時間：75分</p>
+               <p class="text-xs opacity-60 nav-en hidden" style="color: #1a1410;">Duration: 75 minutes</p>
              </div>
            </div><!-- Menu Item 4 - Special Trial Course -->
-           <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px[...]
-             <div class="absolute top-4 right-4"><span class="text-xs tracking-widest px-3 py-1 rounded-full font-semibold nav-ja" style="background: #b8956a; color: white;">初回限定</span> <span c[...]
+           <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px solid #b8956a;">
+             <div class="absolute top-4 right-4"><span class="text-xs tracking-widest px-3 py-1 rounded-full font-semibold nav-ja text-white" style="background: #b8956a;">初回限定</span> <span class="text-xs tracking-widest px-3 py-1 rounded-full font-semibold nav-en hidden text-white" style="background: #b8956a;">First Time Only</span>
              </div>
              <div class="relative">
-               <p class="text-xs tracking-widest mb-2 opacity-60 nav-ja">トライアルコース</p>
-               <p class="text-xs tracking-widest mb-2 opacity-60 nav-en hidden">TRIAL COURSE</p>
-               <h4 class="font-semibold text-lg mb-2 nav-ja">お試しトータルケア</h4>
-               <h4 class="font-semibold text-lg mb-2 nav-en hidden">Total Care Trial</h4>
-               <div class="flex items-baseline gap-3 mb-4"><span class="font-semibold text-2xl" style="color: #b8956a;">¥6,980</span> <span class="text-sm line-through opacity-40">¥15,000</span>
+               <p class="text-xs tracking-widest mb-2 opacity-60 nav-ja" style="color: #1a1410;">トライアルコース</p>
+               <p class="text-xs tracking-widest mb-2 opacity-60 nav-en hidden" style="color: #1a1410;">TRIAL COURSE</p>
+               <h4 class="font-semibold text-lg mb-2 nav-ja" style="color: #1a1410;">お試しトータルケア</h4>
+               <h4 class="font-semibold text-lg mb-2 nav-en hidden" style="color: #1a1410;">Total Care Trial</h4>
+               <div class="flex items-baseline gap-3 mb-4"><span class="font-semibold text-2xl" style="color: #b8956a;">¥6,980</span> <span class="text-sm line-through opacity-40" style="color: #1a1410;">¥15,000</span>
                </div>
-               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja">小顔コルギ＋美肌フェイシャルの贅沢コース。初めての方限定の特別価格。</p>
-               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden">Luxurious combination of facial contouring and beauty facial. Special introductory price for first-time clients only.</p>
-               <p class="text-xs opacity-60 nav-ja">施術時間：90分</p>
-               <p class="text-xs opacity-60 nav-en hidden">Duration: 90 minutes</p>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja" style="color: #1a1410;">小顔コルギ＋美肌フェイシャルの贅沢コース。初めての方限定の特別価格。</p>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden" style="color: #1a1410;">Luxurious combination of facial contouring and beauty facial. Special introductory price for first-time clients only.</p>
+               <p class="text-xs opacity-60 nav-ja" style="color: #1a1410;">施術時間：90分</p>
+               <p class="text-xs opacity-60 nav-en hidden" style="color: #1a1410;">Duration: 90 minutes</p>
              </div>
            </div>
          </div>
@@ -224,10 +226,10 @@
      <section id="staff" class="py-24 md:py-32 px-6 md:px-12">
        <div class="max-w-5xl mx-auto">
          <div class="text-center mb-16">
-           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">STAFF</p>
-           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">STAFF</p>
-           <h3 class="elegant-title text-4xl md:text-5xl nav-ja">スタッフ紹介</h3>
-           <h3 class="elegant-title text-4xl md:text-5xl nav-en hidden">About Our Staff</h3>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja" style="color: #1a1410;">STAFF</p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden" style="color: #1a1410;">STAFF</p>
+           <h3 class="elegant-title text-4xl md:text-5xl nav-ja" style="color: #1a1410;">スタッフ紹介</h3>
+           <h3 class="elegant-title text-4xl md:text-5xl nav-en hidden" style="color: #1a1410;">About Our Staff</h3>
          </div><!-- Staff Grid -->
          <div class="flex justify-center mt-16">
            <div class="group rounded-2xl overflow-hidden transition-smooth hover:shadow-xl max-w-sm" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
@@ -235,12 +237,12 @@
                📸
              </div>
              <div class="p-8">
-               <h4 class="font-semibold text-xl mb-2">鈴木由紀子</h4>
+               <h4 class="font-semibold text-xl mb-2" style="color: #1a1410;">鈴木由紀子</h4>
                <p class="text-sm mb-4 font-medium" style="color: #b8956a;">Manager</p>
-               <div class="flex flex-wrap gap-2 mb-6"><span class="text-xs px-3 py-1 rounded-full" style="background: rgba(184, 149, 106, 0.1); color: #b8956a;">ニキビ</span> <span class="text-xs px-[...]
+               <div class="flex flex-wrap gap-2 mb-6"><span class="text-xs px-3 py-1 rounded-full" style="background: rgba(184, 149, 106, 0.1); color: #b8956a;">ニキビ</span> <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(184, 149, 106, 0.1); color: #b8956a;">敏感肌</span> <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(184, 149, 106, 0.1); color: #b8956a;">小顔</span>
                </div>
-               <p class="text-sm opacity-75 leading-relaxed mb-4">すぐに実感できる施術に自信があります◎ 過去にお肌が荒れてしまい改善するまで苦労した経験があ[...]
-               <p class="text-sm opacity-75 leading-relaxed">お肌はとても繊細です、お客様それぞれのトラブルの原因を一緒に探りながら解決し、美肌のお手伝いを[...]
+               <p class="text-sm opacity-75 leading-relaxed mb-4" style="color: #1a1410;">すぐに実感できる施術に自信があります◎ 過去にお肌が荒れてしまい改善するまで苦労した経験があるからこそ、お客様のお気持ちに寄り添えます。</p>
+               <p class="text-sm opacity-75 leading-relaxed" style="color: #1a1410;">お肌はとても繊細です、お客様それぞれのトラブルの原因を一緒に探りながら解決し、美肌のお手伝いができたら幸いです。</p>
              </div>
            </div>
          </div>
@@ -249,10 +251,10 @@
      <section id="testimonials" class="py-24 md:py-32 px-6 md:px-12" style="background: rgba(0,0,0,0.02);">
        <div class="max-w-6xl mx-auto">
          <div class="text-center mb-16">
-           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">VOICE</p>
-           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">VOICE</p>
-           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-ja">お客様の声</h3>
-           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-en hidden">Customer Voices</h3>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja" style="color: #1a1410;">VOICE</p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden" style="color: #1a1410;">VOICE</p>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-ja" style="color: #1a1410;">お客様の声</h3>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-en hidden" style="color: #1a1410;">Customer Voices</h3>
          </div>
          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
            <!-- Testimonial 1 -->
@@ -260,33 +262,33 @@
              <div class="flex items-center gap-2 mb-4 text-lg">
                ⭐⭐⭐⭐⭐
              </div>
-             <p class="text-base opacity-80 leading-relaxed mb-6 nav-ja">初めて訪れた時から、スタッフの方の丁寧な対応と落ち着いた空間に癒されました。小顔コル[[...]
-             <p class="text-base opacity-80 leading-relaxed mb-6 nav-en hidden">From my first visit, I was healed by the staff's careful attention and calm atmosphere. The facial contouring exceeded my[...]
+             <p class="text-base opacity-80 leading-relaxed mb-6 nav-ja" style="color: #1a1410;">初めて訪れた時から、スタッフの方の丁寧な対応と落ち着いた空間に癒されました。小顔コルギの効果は本当に実感できて、友人からも「顔が変わった！」と言われました。</p>
+             <p class="text-base opacity-80 leading-relaxed mb-6 nav-en hidden" style="color: #1a1410;">From my first visit, I was healed by the staff's careful attention and calm atmosphere. The facial contouring exceeded my expectations.</p>
              <div class="border-t pt-4" style="border-color: rgba(0,0,0,0.1);">
-               <p class="text-sm opacity-60 nav-ja">30代 会社員 M様</p>
-               <p class="text-sm opacity-60 nav-en hidden">M.K., 30s, Office Worker</p>
+               <p class="text-sm opacity-60 nav-ja" style="color: #1a1410;">30代 会社員 M様</p>
+               <p class="text-sm opacity-60 nav-en hidden" style="color: #1a1410;">M.K., 30s, Office Worker</p>
              </div>
            </div><!-- Testimonial 2 -->
            <div class="p-8 rounded-2xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
              <div class="flex items-center gap-2 mb-4 text-lg">
                ⭐⭐⭐⭐⭐
              </div>
-             <p class="text-base opacity-80 leading-relaxed mb-6 nav-ja">肌が敏感で悩んでいましたが、丁寧なカウンセリングのおかげで自分に合った施術を受けられ[[...]
-             <p class="text-base opacity-80 leading-relaxed mb-6 nav-en hidden">I was concerned about sensitive skin, but thanks to the careful counseling, I received treatment suited to me. My skin qu[...]
+             <p class="text-base opacity-80 leading-relaxed mb-6 nav-ja" style="color: #1a1410;">肌が敏感で悩んでいましたが、丁寧なカウンセリングのおかげで自分に合った施術を受けられました。肌質が改善され、今では敏感肌用の化粧品から卒業できました。</p>
+             <p class="text-base opacity-80 leading-relaxed mb-6 nav-en hidden" style="color: #1a1410;">I was concerned about sensitive skin, but thanks to the careful counseling, I received treatment suited to me. My skin quality improved.</p>
              <div class="border-t pt-4" style="border-color: rgba(0,0,0,0.1);">
-               <p class="text-sm opacity-60 nav-ja">20代 フリーランス K様</p>
-               <p class="text-sm opacity-60 nav-en hidden">K.S., 20s, Freelancer</p>
+               <p class="text-sm opacity-60 nav-ja" style="color: #1a1410;">20代 フリーランス K様</p>
+               <p class="text-sm opacity-60 nav-en hidden" style="color: #1a1410;">K.S., 20s, Freelancer</p>
              </div>
            </div><!-- Testimonial 3 -->
            <div class="p-8 rounded-2xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
              <div class="flex items-center gap-2 mb-4 text-lg">
                ⭐⭐⭐⭐⭐
              </div>
-             <p class="text-base opacity-80 leading-relaxed mb-6 nav-ja">たるみが気になって始めたリフトアップケア。プロの施術で実感できる変化があり、3ヶ月で顔[[...]
-             <p class="text-base opacity-80 leading-relaxed mb-6 nav-en hidden">I started lift-up care due to sagging concerns. I can feel real changes from professional treatment, and my face looks yo[...]
+             <p class="text-base opacity-80 leading-relaxed mb-6 nav-ja" style="color: #1a1410;">たるみが気になって始めたリフトアップケア。プロの施術で実感できる変化があり、3ヶ月で顔が引き上がった印象に。定期的に通い続けたいです。</p>
+             <p class="text-base opacity-80 leading-relaxed mb-6 nav-en hidden" style="color: #1a1410;">I started lift-up care due to sagging concerns. I can feel real changes from professional treatment.</p>
              <div class="border-t pt-4" style="border-color: rgba(0,0,0,0.1);">
-               <p class="text-sm opacity-60 nav-ja">40代 営業職 S様</p>
-               <p class="text-sm opacity-60 nav-en hidden">S.T., 40s, Sales</p>
+               <p class="text-sm opacity-60 nav-ja" style="color: #1a1410;">40代 営業職 S様</p>
+               <p class="text-sm opacity-60 nav-en hidden" style="color: #1a1410;">S.T., 40s, Sales</p>
              </div>
            </div>
          </div>
@@ -294,17 +296,23 @@
      </section><!-- CTA Section -->
      <section id="cta-section" class="py-20 md:py-28 px-6 md:px-12 text-center" style="background: linear-gradient(135deg, rgba(0,0,0,0.03), rgba(0,0,0,0.06));">
        <div class="max-w-3xl mx-auto">
-         <h3 class="elegant-title text-3xl md:text-5xl mb-8 nav-ja">ご予約はこちら</h3>
-         <h3 class="elegant-title text-3xl md:text-5xl mb-8 nav-en hidden">Book Now</h3>
-         <p class="text-lg opacity-75 mb-10 nav-ja">完全予約制となっております。<br>
+         <h3 class="elegant-title text-3xl md:text-5xl mb-8 nav-ja" style="color: #1a1410;">ご予約はこちら</h3>
+         <h3 class="elegant-title text-3xl md:text-5xl mb-8 nav-en hidden" style="color: #1a1410;">Book Now</h3>
+         <p class="text-lg opacity-75 mb-10 nav-ja" style="color: #1a1410;">完全予約制となっております。<br>
            お電話・LINE・HotPepperBeautyよりご予約をお待ちしております。</p>
-         <p class="text-lg opacity-75 mb-10 nav-en hidden">By appointment only. Please feel free to contact us by phone or LINE.</p>
+         <p class="text-lg opacity-75 mb-10 nav-en hidden" style="color: #1a1410;">By appointment only. Please feel free to contact us by phone or LINE.</p>
          <div class="flex flex-wrap gap-4 justify-center">
-           <a href="tel:09033702270" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 active:scale-95" style="background: rgba(184, 149, 106, 0.1);[...]
+           <a href="tel:09033702270" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 active:scale-95 text-white" style="background-color: #b8956a;">
              <svg width="18" height="18" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <circle cx="6" cy="10" r="2.5" fill="white" /> <circle cx="12" cy="6" r="2.5" fill="white" /> <circle cx="18" cy="10" r="2.5" fill="white" /> <path d="M12 9 L12 18" stroke="white" stroke-[...]
-             </svg></a> <a href="https://www.instagram.com/scarlett_kitasando_ethtetic?igsh=MWZvNnRqY21weWtmcQ==" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-lg flex items-center[...]
-           </div>
+               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+             </svg>
+           </a> <a href="https://www.instagram.com/scarlett_kitasando_ethtetic?igsh=MWZvNnRqY21weWtmcQ==" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 active:scale-95 text-white" style="background-color: #b8956a;">
+             <svg width="18" height="18" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="white" stroke-width="2" fill="none"/>
+               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" stroke="white" stroke-width="2" fill="none"/>
+               <circle cx="17.5" cy="6.5" r="1.5" fill="white"/>
+             </svg>
+           </a>
          </div>
        </div>
      </section><!-- Info Section -->
@@ -312,74 +320,64 @@
        <div class="max-w-5xl mx-auto">
          <div class="grid md:grid-cols-2 gap-16">
            <div>
-             <h4 class="font-semibold text-xl mb-6 nav-ja flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5"></i>アクセス・営業情報</h4>
-             <h4 class="font-semibold text-xl mb-6 nav-en hidden flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5"></i>Access &amp; Hours</h4>
+             <h4 class="font-semibold text-xl mb-6 nav-ja flex items-center gap-2" style="color: #1a1410;"><i data-lucide="map-pin" class="w-5 h-5" style="color: #b8956a;"></i>アクセス・営業情報</h4>
+             <h4 class="font-semibold text-xl mb-6 nav-en hidden flex items-center gap-2" style="color: #1a1410;"><i data-lucide="map-pin" class="w-5 h-5" style="color: #b8956a;"></i>Access & Hours</h4>
              <div class="space-y-8">
                <div>
-                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-ja">住所</p>
-                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-en hidden">Address</p>
-                 <p class="text-base opacity-85 mb-6 nav-ja">〒151-0051<br>
+                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-ja" style="color: #1a1410;">住所</p>
+                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-en hidden" style="color: #1a1410;">Address</p>
+                 <p class="text-base opacity-85 mb-6 nav-ja" style="color: #1a1410;">〒151-0051<br>
                    東京都渋谷区千駄ヶ谷3丁目13-14 401号室</p>
-                 <p class="text-base opacity-85 mb-6 nav-en hidden">151-0051<br>
-                   3-13-14 Sendagaya, Shibuya-ku, Tokyo 401</p><a href="https://maps.app.goo.gl/RQJHBzHaBEqgsQEV8?g_st=ac" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 rounded-[...]
+                 <p class="text-base opacity-85 mb-6 nav-en hidden" style="color: #1a1410;">151-0051<br>
+                   3-13-14 Sendagaya, Shibuya-ku, Tokyo 401</p><a href="https://maps.app.goo.gl/RQJHBzHaBEqgsQEV8?g_st=ac" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 rounded-full text-sm font-semibold transition-all hover:opacity-70 text-white" style="background-color: #b8956a;">Google Map で見る</a>
                </div>
                <div>
-                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-ja">アクセス</p>
-                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-en hidden">Access</p>
-                 <p class="text-base opacity-85 nav-ja">東京メトロ副都心線「北参道駅」徒歩30秒<br>
+                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-ja" style="color: #1a1410;">アクセス</p>
+                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-en hidden" style="color: #1a1410;">Access</p>
+                 <p class="text-base opacity-85 nav-ja" style="color: #1a1410;">東京メトロ副都心線「北参道駅」徒歩30秒<br>
                    JR山手線「代々木駅」徒歩10分</p>
-                 <p class="text-base opacity-85 nav-en hidden">30 sec walk from Kita-Sando Station (Tokyo Metro Fukutoshin Line)<br>
+                 <p class="text-base opacity-85 nav-en hidden" style="color: #1a1410;">30 sec walk from Kita-Sando Station (Tokyo Metro Fukutoshin Line)<br>
                    10 min walk from Yoyogi Station (JR Yamanote Line)</p>
                </div>
                <div>
-                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-ja">営業時間</p>
-                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-en hidden">Hours</p>
-                 <p class="text-base opacity-85 nav-ja">10:00～22:00（最終受付 21:00）<br><span class="text-sm">定休日：火曜日</span></p>
-                 <p class="text-base opacity-85 nav-en hidden">10:00 - 22:00 (Last appointment: 21:00)<br><span class="text-sm">Closed: Tuesdays</span></p>
+                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-ja" style="color: #1a1410;">営業時間</p>
+                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-en hidden" style="color: #1a1410;">Hours</p>
+                 <p class="text-base opacity-85 nav-ja" style="color: #1a1410;">10:00～22:00（最終受付 21:00）<br><span class="text-sm">定休日：火曜日</span></p>
+                 <p class="text-base opacity-85 nav-en hidden" style="color: #1a1410;">10:00 - 22:00 (Last appointment: 21:00)<br><span class="text-sm">Closed: Tuesdays</span></p>
                </div>
              </div>
            </div>
            <div>
-             <h4 class="font-semibold text-xl mb-6 nav-ja flex items-center gap-2"><i data-lucide="phone" class="w-5 h-5"></i>お問い合わせ</h4>
-             <h4 class="font-semibold text-xl mb-6 nav-en hidden flex items-center gap-2"><i data-lucide="phone" class="w-5 h-5"></i>Contact</h4>
+             <h4 class="font-semibold text-xl mb-6 nav-ja flex items-center gap-2" style="color: #1a1410;"><i data-lucide="phone" class="w-5 h-5" style="color: #b8956a;"></i>お問い合わせ</h4>
+             <h4 class="font-semibold text-xl mb-6 nav-en hidden flex items-center gap-2" style="color: #1a1410;"><i data-lucide="phone" class="w-5 h-5" style="color: #b8956a;"></i>Contact</h4>
              <div class="p-8 rounded-2xl text-center" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
-               <p class="text-sm opacity-70 mb-6 nav-ja">お電話またはLINEよりお問い合わせください。</p>
-               <p class="text-sm opacity-70 mb-6 nav-en hidden">Please contact us via phone or LINE.</p><a href="tel:09033702270" class="text-3xl font-bold block mb-8 hover:opacity-70 transition-opacity[...]
+               <p class="text-sm opacity-70 mb-6 nav-ja" style="color: #1a1410;">お電話またはLINEよりお問い合わせください。</p>
+               <p class="text-sm opacity-70 mb-6 nav-en hidden" style="color: #1a1410;">Please contact us via phone or LINE.</p><a href="tel:09033702270" class="text-3xl font-bold block mb-8 hover:opacity-70 transition-opacity" style="color: #b8956a;">090-3370-2270</a>
                <div class="flex flex-col gap-3">
-                 <a href="https://line.me/R/ti/p/@521hhscf" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full font-semibold transition-all hover:opacity-80 nav-ja" style="background[...]
-                 </div>
+                 <a href="https://line.me/R/ti/p/@521hhscf" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full font-semibold transition-all hover:opacity-80 nav-ja text-white" style="background-color: #b8956a;">LINEで予約</a> <a href="https://line.me/R/ti/p/@521hhscf" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full font-semibold transition-all hover:opacity-80 nav-en hidden text-white" style="background-color: #b8956a;">Book via LINE</a>
                </div>
              </div>
            </div>
          </div>
        </div>
      </section><!-- Footer -->
-     <footer id="footer" class="py-12 px-6 md:px-12 border-t mt-auto" style="border-color: rgba(0,0,0,0.1);">
+     <footer id="footer" class="py-12 px-6 md:px-12 border-t mt-auto" style="border-color: rgba(0,0,0,0.1); background-color: #f5f5f5;">
        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-         <p id="footer-logo" class="elegant-title text-xl font-semibold"></p>
-         <p class="text-sm opacity-60 nav-ja">Copyright © 2026 Scarlett</p>
-         <p class="text-sm opacity-60 nav-en hidden">Copyright © 2026 Scarlett</p>
+         <p id="footer-logo" class="elegant-title text-xl font-semibold" style="color: #1a1410;">Scarlett</p>
+         <p class="text-sm opacity-60 nav-ja" style="color: #1a1410;">Copyright © 2026 Scarlett</p>
+         <p class="text-sm opacity-60 nav-en hidden" style="color: #1a1410;">Copyright © 2026 Scarlett</p>
        </div>
      </footer>
    </div>
    <script>
-     const logoSVG = `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-       <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/>
-       <path d="M20 10 L28 30 L12 30 Z" fill="currentColor" opacity="0.8"/>
-       <circle cx="20" cy="22" r="3" fill="white"/>
-     </svg>`;
-
      const defaultConfig = {
-       // Colors
        background_color: "#f5f5f5",
        surface_color: "#ffffff",
        text_color: "#1a1410",
        primary_color: "#b8956a",
        secondary_color: "#d4a574",
-       // Typography
        font_family: "Noto Serif JP",
        font_size: 16,
-       // Content
        site_title: "Scarlett",
        hero_heading: "美しさは内面から理想の肌へ",
        hero_heading_en: "Beauty from Within, Perfect Skin as the Result",
@@ -395,7 +393,7 @@
        strength2_title_en: "Peace of Mind Through Medical Partnership",
        strength3_title: "即効性の高いメニュー",
        strength3_title_en: "High-Effectiveness Menu Options",
-       lang: "ja" // Current language
+       lang: "ja"
      };
 
      let currentLang = "ja";
@@ -406,7 +404,6 @@
      }
 
      function updateLanguage() {
-       // Toggle visibility
        document.querySelectorAll(".nav-ja").forEach(el => {
          el.classList.toggle("hidden", currentLang === "en");
        });
@@ -414,7 +411,6 @@
          el.classList.toggle("hidden", currentLang === "ja");
        });
 
-       // Update content
        const heroTitle = document.getElementById("hero-title");
        const heroDesc = document.getElementById("hero-desc");
        const conceptTitle = document.getElementById("concept-title");
@@ -446,59 +442,19 @@
        const c = { ...defaultConfig, ...config };
        const baseFontStack = "'Noto Serif JP', serif";
        const fontStack = `'${c.font_family}', ${baseFontStack}`;
-       const baseSize = c.font_size;
 
-       // Apply Colors
        const app = document.getElementById('app');
        app.style.backgroundColor = c.background_color;
        app.style.color = c.text_color;
 
-       const navbar = document.getElementById('navbar');
-       navbar.style.backgroundColor = `${c.background_color}F0`;
-       navbar.style.backdropFilter = "blur(12px)";
-
-       const primaryBtns = [document.getElementById('nav-cta'), document.getElementById('main-cta')];
-       primaryBtns.forEach(btn => {
-         btn.style.backgroundColor = c.primary_color;
-         btn.style.color = "#ffffff";
+       // Ensure all text elements remain visible
+       document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, li, a').forEach(el => {
+         if (!el.style.color) {
+           el.style.color = c.text_color;
+         }
        });
 
-       const secBtn = document.getElementById('sec-cta');
-       secBtn.style.borderColor = c.primary_color;
-       secBtn.style.color = c.primary_color;
-
-       const heroBg = document.querySelector('#hero .absolute');
-       if (heroBg) {
-         heroBg.style.background = `radial-gradient(ellipse at center, ${c.secondary_color}30, transparent 70%)`;
-       }
-
-       // Apply Typography
-       app.style.fontFamily = fontStack;
-
-       const elegantTitles = document.querySelectorAll('.elegant-title');
-       elegantTitles.forEach(el => {
-         el.style.fontSize = el.id === 'nav-logo' || el.id === 'footer-logo' ? `${baseSize * 1.5}px` : 
-                            el.id === 'hero-title' ? `${baseSize * 3.5}px` :
-                            el.id === 'concept-title' ? `${baseSize * 2.5}px` : `${baseSize * 2}px`;
-         el.style.color = c.text_color;
-       });
-
-       document.getElementById('hero-title').style.fontSize = `${baseSize * 3.5}px`;
-       document.getElementById('hero-title').style.color = c.text_color;
-       
-       document.getElementById('hero-desc').style.fontSize = `${baseSize * 1.125}px`;
-       document.getElementById('hero-desc').style.color = c.text_color;
-
-       document.getElementById('concept-text').style.fontSize = `${baseSize * 1.125}px`;
-       document.getElementById('concept-text').style.color = c.text_color;
-
-       // Apply Content
-       document.getElementById('nav-logo').textContent = c.site_title;
-       document.getElementById('footer-logo').textContent = c.site_title;
-       
-       // Update based on current language
        updateLanguage();
-
        lucide.createIcons();
      }
 
@@ -507,74 +463,26 @@
          recolorables: [
            { 
              get: () => config.background_color || defaultConfig.background_color, 
-             set: (v) => window.elementSdk.setConfig({ background_color: v }) 
-           },
-           { 
-             get: () => config.surface_color || defaultConfig.surface_color, 
-             set: (v) => window.elementSdk.setConfig({ surface_color: v }) 
+             set: (v) => window.elementSdk?.setConfig?.({ background_color: v }) 
            },
            { 
              get: () => config.text_color || defaultConfig.text_color, 
-             set: (v) => window.elementSdk.setConfig({ text_color: v }) 
+             set: (v) => window.elementSdk?.setConfig?.({ text_color: v }) 
            },
            { 
              get: () => config.primary_color || defaultConfig.primary_color, 
-             set: (v) => window.elementSdk.setConfig({ primary_color: v }) 
-           },
-           { 
-             get: () => config.secondary_color || defaultConfig.secondary_color, 
-             set: (v) => window.elementSdk.setConfig({ secondary_color: v }) 
+             set: (v) => window.elementSdk?.setConfig?.({ primary_color: v }) 
            }
          ],
          borderables: [],
          fontEditable: {
            get: () => config.font_family || defaultConfig.font_family,
-           set: (v) => window.elementSdk.setConfig({ font_family: v })
-         },
-         fontSizeable: {
-           get: () => config.font_size || defaultConfig.font_size,
-           set: (v) => window.elementSdk.setConfig({ font_size: v })
+           set: (v) => window.elementSdk?.setConfig?.({ font_family: v })
          }
        };
      }
 
-     function mapToEditPanelValues(config) {
-       const c = { ...defaultConfig, ...config };
-       return new Map([
-         ["site_title", c.site_title],
-         ["hero_heading", c.hero_heading],
-         ["hero_heading_en", c.hero_heading_en],
-         ["hero_subheading", c.hero_subheading],
-         ["hero_subheading_en", c.hero_subheading_en],
-         ["concept_title", c.concept_title],
-         ["concept_title_en", c.concept_title_en],
-         ["concept_text", c.concept_text],
-         ["concept_text_en", c.concept_text_en],
-         ["strength1_title", c.strength1_title],
-         ["strength1_title_en", c.strength1_title_en],
-         ["strength2_title", c.strength2_title],
-         ["strength2_title_en", c.strength2_title_en],
-         ["strength3_title", c.strength3_title],
-         ["strength3_title_en", c.strength3_title_en]
-       ]);
-     }
-
-     // Initialize SDK
-     if (window.elementSdk) {
-       window.elementSdk.init({
-         defaultConfig,
-         onConfigChange,
-         mapToCapabilities,
-         mapToEditPanelValues
-       });
-     } else {
-       // Fallback for direct viewing
-       onConfigChange(defaultConfig);
-     }
-
-     // Language toggle button
      document.addEventListener('DOMContentLoaded', () => {
-       // Initialize the nav title
        document.getElementById('nav-logo').textContent = defaultConfig.site_title;
        document.getElementById('footer-logo').textContent = defaultConfig.site_title;
 
@@ -587,11 +495,11 @@
        if (mobileLangToggle) {
          mobileLangToggle.addEventListener('click', () => {
            toggleLanguage();
-           closeMobileMenu();
+           const mobileMenu = document.getElementById('mobile-menu');
+           if (mobileMenu) mobileMenu.classList.add('hidden');
          });
        }
 
-       // Mobile menu toggle
        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
        const mobileMenu = document.getElementById('mobile-menu');
        
@@ -601,14 +509,12 @@
            mobileMenu.classList.toggle('hidden');
          });
 
-         // Close menu when a link is clicked
          mobileMenu.querySelectorAll('a').forEach(link => {
            link.addEventListener('click', () => {
              mobileMenu.classList.add('hidden');
            });
          });
 
-         // Close menu when clicking outside
          document.addEventListener('click', (e) => {
            if (!mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
              mobileMenu.classList.add('hidden');
@@ -616,17 +522,8 @@
          });
        }
 
-       function closeMobileMenu() {
-         if (mobileMenu) {
-           mobileMenu.classList.add('hidden');
-         }
-       }
-
        const navCta = document.getElementById('nav-cta');
        const mainCta = document.getElementById('main-cta');
-       
-       navCta.textContent = currentLang === 'ja' ? 'ご予約' : 'Book Now';
-       mainCta.textContent = currentLang === 'ja' ? 'ご予約はこちら' : 'Book Now';
        
        function scrollToCTA() {
          const ctaSection = document.getElementById('cta-section');
@@ -642,6 +539,18 @@
        if (mainCta) {
          mainCta.addEventListener('click', scrollToCTA);
          mainCta.style.cursor = "pointer";
+       }
+
+       // Initialize with fallback
+       if (window.elementSdk) {
+         window.elementSdk.init({
+           defaultConfig,
+           onConfigChange,
+           mapToCapabilities,
+           mapToEditPanelValues: () => new Map(Object.entries(defaultConfig))
+         });
+       } else {
+         onConfigChange(defaultConfig);
        }
 
        lucide.createIcons();

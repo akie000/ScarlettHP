@@ -1,667 +1,651 @@
 <!doctype html>
 <html lang="ja" class="h-full">
  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scarlett –kQ“¹ | ˆãt’ñŒgƒTƒƒ“</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; }
-    body { font-family: 'Noto Serif JP', serif; overflow-x: hidden; }
-    .app-wrapper { height: 100%; width: 100%; overflow-y: auto; display: flex; flex-direction: column; }
-    .elegant-title { font-family: 'Playfair Display', serif; font-weight: 600; letter-spacing: 0.05em; }
-    .transition-smooth { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-  </style>
-  <style>body { box-sizing: border-box; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Scarlett åŒ—å‚é“ | åŒ»å¸«ææºã‚µãƒ­ãƒ³</title>
+   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+   <script src="/_sdk/element_sdk.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+   <style>
+     * { margin: 0; padding: 0; box-sizing: border-box; }
+     html, body { height: 100%; }
+     body { font-family: 'Noto Serif JP', serif; overflow-x: hidden; }
+     .app-wrapper { height: 100%; width: 100%; overflow-y: auto; display: flex; flex-direction: column; }
+     .elegant-title { font-family: 'Playfair Display', serif; font-weight: 600; letter-spacing: 0.05em; }
+     .transition-smooth { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+   </style>
+   <style>body { box-sizing: border-box; }</style>
+   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="antialiased">
-  <div id="app" class="app-wrapper">
-   <!-- Navigation -->
-   <nav id="navbar" class="fixed top-0 w-full z-50 px-6 md:px-12 py-4 transition-smooth">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-     <div class="flex items-center gap-3">
-      <h1 id="nav-logo" class="elegant-title text-2xl md:text-3xl font-semibold"></h1>
-     </div>
-     <div class="hidden md:flex gap-12 items-center"><a href="#about" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-ja">ƒTƒƒ“Ğ‰î</a> <a href="#about" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-en hidden">About</a> <a href="#about" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-zh hidden">?˜°</a> <a href="#menu" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-ja">{pƒƒjƒ…[</a> <a href="#menu" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-en hidden">Menu</a> <a href="#menu" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-zh hidden">Ø?</a> <a href="#staff" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-ja">ƒXƒ^ƒbƒtĞ‰î</a> <a href="#staff" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-en hidden">Staff</a> <a href="#staff" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-zh hidden">?H‰î?</a> <a href="#testimonials" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-ja">‚¨‹q—l‚Ìº</a> <a href="#testimonials" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-en hidden">Voice</a> <a href="#testimonials" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-zh hidden">‹q??˜Á</a> <a href="#info" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-ja">ƒAƒNƒZƒX</a> <a href="#info" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-en hidden">Access</a> <a href="#info" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-zh hidden">??</a> <button id="lang-toggle" class="px-4 py-2 rounded-full text-sm font-medium border transition-all hover:opacity-80">’†•¶ / EN / JA</button>
-     </div>
-     <div class="md:hidden">
-      <button id="mobile-menu-btn" class="p-2"> <i data-lucide="menu"></i> </button>
-      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 mt-2 mx-4 rounded-xl shadow-lg z-40" style="background: rgba(255,255,255,0.98); border: 1px solid rgba(0,0,0,0.1);">
-       <div class="flex flex-col p-4 gap-2"><a href="#about" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-ja">ƒTƒƒ“Ğ‰î</a> <a href="#about" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-en hidden">About</a> <a href="#about" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-zh hidden">?˜°</a> <a href="#menu" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-ja">{pƒƒjƒ…[</a> <a href="#menu" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-en hidden">Menu</a> <a href="#menu" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-zh hidden">Ø?</a> <a href="#staff" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-ja">ƒXƒ^ƒbƒtĞ‰î</a> <a href="#staff" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-en hidden">Staff</a> <a href="#staff" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-zh hidden">?H‰î?</a> <a href="#testimonials" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-ja">‚¨‹q—l‚Ìº</a> <a href="#testimonials" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-en hidden">Voice</a> <a href="#testimonials" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-zh hidden">‹q??˜Á</a> <a href="#info" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-ja">ƒAƒNƒZƒX</a> <a href="#info" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-en hidden">Access</a> <a href="#info" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-zh hidden">??</a>
-        <div class="border-t my-2" style="border-color: rgba(0,0,0,0.1);"></div><button id="mobile-lang-toggle" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 text-left font-medium">’†•¶ / EN / JA</button>
+   <div id="app" class="app-wrapper">
+     <!-- Navigation -->
+     <nav id="navbar" class="fixed top-0 w-full z-50 px-6 md:px-12 py-4 transition-smooth">
+       <div class="max-w-7xl mx-auto flex justify-between items-center">
+         <div class="flex items-center gap-3">
+           <h1 id="nav-logo" class="elegant-title text-2xl md:text-3xl font-semibold"></h1>
+         </div>
+         <div class="hidden md:flex gap-12 items-center"><a href="#about" class="text-sm tracking-wider hover:opacity-60 transition-opacity nav-ja">ã‚µãƒ­ãƒ³ç´¹ä»‹</a> <a href="#about" class="text-sm [...]
+         </div>
+         <div class="md:hidden">
+           <button id="mobile-menu-btn" class="p-2"> <i data-lucide="menu"></i> </button>
+           <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 mt-2 mx-4 rounded-xl shadow-lg z-40" style="background: rgba(255,255,255,0.98); border: 1px solid rgba(0,0,0,0.1);">
+             <div class="flex flex-col p-4 gap-2"><a href="#about" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 nav-ja">ã‚µãƒ­ãƒ³ç´¹ä»‹</a> <a href="#about" class="px-4 py-3 rounded-l[...]
+               <div class="border-t my-2" style="border-color: rgba(0,0,0,0.1);"></div><button id="mobile-lang-toggle" class="px-4 py-3 rounded-lg transition-colors hover:bg-gray-100 text-left font-mediu[...]
+             </div>
+           </div>
+         </div>
        </div>
-      </div>
-     </div>
-    </div>
-   </nav><!-- Fixed CTA Button --> <button id="nav-cta" class="fixed top-40 right-6 md:top-52 md:right-12 px-8 py-3 rounded-full font-semibold text-base transition-all transform hover:scale-105 active:scale-95 z-40 shadow-lg" style="white-space: nowrap;"></button><!-- Hero Section -->
-   <section id="hero" class="relative pt-32 md:pt-40 pb-20 px-6 md:px-12 min-h-screen flex flex-col justify-center items-center text-center overflow-hidden">
-    <div class="relative z-10 max-w-4xl">
-     <p class="text-sm tracking-[0.3em] mb-6 opacity-70 uppercase" style="background: linear-gradient(135deg, #d4af37, #c4a64a); color: white; display: inline-block; padding: 8px 20px; border-radius: 4px;"><span class="nav-ja">¬Šç‹¸³E”§¿‰ü‘PƒTƒƒ“</span><span class="nav-en hidden"> Facial Contouring &amp; Skin Improvement Salon</span><span class="nav-zh hidden">¬??³E??‰ü‘P¹?</span></p>
-     <h2 id="hero-title" class="elegant-title text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">”ü‚µ‚³‚Í“à–Ê‚©‚ç—‘z‚Ì”§‚Ö</h2>
-     <p id="hero-desc" class="text-lg md:text-xl opacity-80 mb-12 leading-relaxed max-w-2xl mx-auto">Scarlett –kQ“¹‚ÍAuŒ‹‰ÊEˆÀSEˆÀ‘Sv‚ğ‘åØ‚É‚µ‚È‚ª‚çA‚»‚Ì“ú‚Ì”§Eg‘ÌES‚ÉŠñ‚è“Y‚¤ƒPƒA‚ğ‚²’ñ‹Ÿ‚µ‚Ü‚·B</p>
-     <div class="flex flex-col sm:flex-row gap-4 justify-center"><button id="main-cta" class="px-8 py-3.5 rounded-full font-semibold text-base shadow-lg transition-all transform hover:-translate-y-1 active:translate-y-0">‚²—\–ñ‚Í‚±‚¿‚ç</button>
-     </div>
-    </div>
-   </section><!-- About Section -->
-   <section id="about" class="py-24 md:py-32 px-6 md:px-12">
-    <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-16">
-      <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">About Scarlett</p>
-      <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">About Scarlett</p>
-      <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-ja">–kQ“¹‚Ì‰B‚ê‰ÆƒTƒƒ“</h3>
-      <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-en hidden">Hidden Gem Salon in Kita-Sando</h3>
-      <p class="text-lg opacity-75 leading-relaxed max-w-3xl mx-auto nav-ja">Scarlett –kQ“¹‚ÍAuŒ‹‰ÊEˆÀSEˆÀ‘Sv‚ğ‘åØ‚É‚µ‚È‚ª‚çA‚»‚Ì“ú‚Ì”§Eg‘ÌES‚ÉŠñ‚è“Y‚¤ƒPƒA‚ğ‚²’ñ‹Ÿ‚µ‚Ü‚·B•\–Ê“I‚È•Ï‰»‚É‚Æ‚Ç‚Ü‚ç‚¸Aª–{‚©‚ç‚Ì‰ü‘P‚ğd‚Ë‚ÄA–¢—ˆ‚Ö‘±‚­Œ’‚â‚©‚È”ü‚µ‚³‚ğˆê‚Éˆç‚ñ‚Å‚¢‚«‚Ü‚·B</p>
-      <p class="text-lg opacity-75 leading-relaxed max-w-3xl mx-auto nav-en hidden">Scarlett Kita-Sando provides care that aligns with your skin, body, and heart of the day, prioritizing "results, peace of mind, and safety." We go beyond surface changes, continually improving from the root to cultivate lasting healthy beauty for the future.</p>
-     </div>
-     <div class="grid grid-cols-2 gap-4 mt-16 max-w-xl mx-auto">
-      <div class="p-4 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-       <p class="text-2xl font-bold mb-1">100%</p>
-       <p class="text-xs opacity-70 nav-ja">Š®‘S—\–ñ§</p>
-       <p class="text-xs opacity-70 nav-en hidden">Reservation Only</p>
-      </div>
-      <div class="p-4 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-       <p class="text-2xl font-bold mb-1">30•b</p>
-       <p class="text-xs opacity-70 nav-ja">‰w‚©‚ç“k•à</p>
-       <p class="text-xs opacity-70 nav-en hidden">Walk from Station</p>
-      </div>
-      <div class="p-4 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-       <p class="text-2xl font-bold mb-1 nav-ja">ŒÂº</p>
-       <p class="text-2xl font-bold mb-1 nav-en hidden">Private</p>
-       <p class="text-xs opacity-70 nav-ja">Š®‘Sƒvƒ‰ƒCƒx[ƒg</p>
-       <p class="text-xs opacity-70 nav-en hidden">Completely Private</p>
-      </div>
-      <div class="p-4 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-       <p class="text-2xl font-bold mb-1 nav-ja">Œ‹‰Ê</p>
-       <p class="text-2xl font-bold mb-1 nav-en hidden">Results</p>
-       <p class="text-xs opacity-70 nav-ja">d‹‚ÌƒPƒA</p>
-       <p class="text-xs opacity-70 nav-en hidden">Focused Care</p>
-      </div>
-     </div>
-    </div>
-   </section><!-- Concept Section -->
-   <section id="concept" class="py-24 md:py-32 px-6 md:px-12">
-    <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-16">
-      <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">Concept</p>
-      <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">Concept</p>
-      <h3 id="concept-title" class="elegant-title text-4xl md:text-5xl mb-8"></h3>
-      <p id="concept-text" class="text-lg opacity-75 leading-relaxed max-w-3xl mx-auto"></p>
-     </div><!-- Strengths Grid -->
-     <div class="grid md:grid-cols-3 gap-8 mt-20">
-      <div class="p-8 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-       <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(0,0,0,0.05);"><i data-lucide="sparkles" class="w-7 h-7"></i>
+     </nav><!-- Fixed CTA Button --> <button id="nav-cta" class="fixed top-40 right-6 md:top-52 md:right-12 px-8 py-3 rounded-full font-semibold text-base transition-all transform hover:scale-105 ac[...]
+     <section id="hero" class="relative pt-32 md:pt-40 pb-20 px-6 md:px-12 min-h-screen flex flex-col justify-center items-center text-center overflow-hidden">
+       <div class="relative z-10 max-w-4xl">
+         <p class="text-sm tracking-[0.3em] mb-6 opacity-70 uppercase" style="background: linear-gradient(135deg, #d4af37, #c4a64a); color: white; display: inline-block; padding: 8px 20px; border-radi[...]
+         <h2 id="hero-title" class="elegant-title text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">ç¾ã—ã•ã¯å†…é¢ã‹ã‚‰ç†æƒ³ã®è‚Œã¸</h2>
+         <p id="hero-desc" class="text-lg md:text-xl opacity-80 mb-12 leading-relaxed max-w-2xl mx-auto">Scarlett åŒ—å‚é“ã¯ã€ã€Œçµæœãƒ»å®‰å¿ƒãƒ»å®‰å…¨ã€ã‚’å¤§åˆ‡ã«ã—ãªãŒã‚‰ã€ãã®æ—¥ã®è‚Œãƒ»èº«ä½“ãƒ»å¿ƒã«å¯„[[...]
+         <div class="flex flex-col sm:flex-row gap-4 justify-center"><button id="main-cta" class="px-8 py-3.5 rounded-full font-semibold text-base shadow-lg transition-all transform hover:-translate-y[...]
+         </div>
        </div>
-       <h4 id="strength1_title" class="font-semibold text-lg mb-3"></h4>
-       <p class="text-sm opacity-70 leading-relaxed">ƒtƒFƒCƒVƒƒƒ‹‚Æ¬Šç‹¸³‚É“Á‰»‚µ‚½‹Zp‚ÅAŠmÀ‚È”§¿‰ü‘P‚ğÀŒ»‚µ‚Ü‚·B</p>
-      </div>
-      <div class="p-8 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-       <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(0,0,0,0.05);"><i data-lucide="shield-check" class="w-7 h-7"></i>
+     </section><!-- About Section -->
+     <section id="about" class="py-24 md:py-32 px-6 md:px-12">
+       <div class="max-w-5xl mx-auto">
+         <div class="text-center mb-16">
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">About Scarlett</p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">About Scarlett</p>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-ja">åŒ—å‚é“ã®éš ã‚Œå®¶ã‚µãƒ­ãƒ³</h3>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-en hidden">Hidden Gem Salon in Kita-Sando</h3>
+           <p class="text-lg opacity-75 leading-relaxed max-w-3xl mx-auto nav-ja">Scarlett åŒ—å‚é“ã¯ã€ã€Œçµæœãƒ»å®‰å¿ƒãƒ»å®‰å…¨ã€ã‚’å¤§åˆ‡ã«ã—ãªãŒã‚‰ã€ãã®æ—¥ã®è‚Œãƒ»èº«ä½“ãƒ»å¿ƒã«å¯„[[...]
+           <p class="text-lg opacity-75 leading-relaxed max-w-3xl mx-auto nav-en hidden">Scarlett Kita-Sando provides care that aligns with your skin, body, and heart of the day, prioritizing "results,[...]
+         </div>
+         <div class="grid grid-cols-2 gap-4 mt-16 max-w-xl mx-auto">
+           <div class="p-4 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
+             <p class="text-2xl font-bold mb-1">100%</p>
+             <p class="text-xs opacity-70 nav-ja">å®Œå…¨äºˆç´„åˆ¶</p>
+             <p class="text-xs opacity-70 nav-en hidden">Reservation Only</p>
+           </div>
+           <div class="p-4 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
+             <p class="text-2xl font-bold mb-1">30ç§’</p>
+             <p class="text-xs opacity-70 nav-ja">é§…ã‹ã‚‰å¾’æ­©</p>
+             <p class="text-xs opacity-70 nav-en hidden">Walk from Station</p>
+           </div>
+           <div class="p-4 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
+             <p class="text-2xl font-bold mb-1 nav-ja">å€‹å®¤</p>
+             <p class="text-2xl font-bold mb-1 nav-en hidden">Private</p>
+             <p class="text-xs opacity-70 nav-ja">å®Œå…¨ãƒ—ãƒ©ã‚¤ãƒ™ãƒ¼ãƒˆ</p>
+             <p class="text-xs opacity-70 nav-en hidden">Completely Private</p>
+           </div>
+           <div class="p-4 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
+             <p class="text-2xl font-bold mb-1 nav-ja">çµæœ</p>
+             <p class="text-2xl font-bold mb-1 nav-en hidden">Results</p>
+             <p class="text-xs opacity-70 nav-ja">é‡è¦–ã®ã‚±ã‚¢</p>
+             <p class="text-xs opacity-70 nav-en hidden">Focused Care</p>
+           </div>
+         </div>
        </div>
-       <h4 id="strength2_title" class="font-semibold text-lg mb-3"></h4>
-       <p class="text-sm opacity-70 leading-relaxed">ˆã—Ã’ñŒg‚É‚æ‚èAˆÀSEˆÀ‘S‚ÈƒvƒƒtƒFƒbƒVƒ‡ƒiƒ‹ƒPƒA‚ğˆêŠÑ‚µ‚Ä’ñ‹Ÿ‚µ‚Ü‚·B</p>
-      </div>
-      <div class="p-8 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
-       <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(0,0,0,0.05);"><i data-lucide="zap" class="w-7 h-7"></i>
+     </section><!-- Concept Section -->
+     <section id="concept" class="py-24 md:py-32 px-6 md:px-12">
+       <div class="max-w-5xl mx-auto">
+         <div class="text-center mb-16">
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">Concept</p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">Concept</p>
+           <h3 id="concept-title" class="elegant-title text-4xl md:text-5xl mb-8"></h3>
+           <p id="concept-text" class="text-lg opacity-75 leading-relaxed max-w-3xl mx-auto"></p>
+         </div><!-- Strengths Grid -->
+         <div class="grid md:grid-cols-3 gap-8 mt-20">
+           <div class="p-8 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
+             <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(0,0,0,0.05);"><i data-lucide="sparkles" class="w-7 h-7"></i>
+             </div>
+             <h4 id="strength1_title" class="font-semibold text-lg mb-3"></h4>
+             <p class="text-sm opacity-70 leading-relaxed">ãƒ•ã‚§ã‚¤ã‚·ãƒ£ãƒ«ã¨å°é¡”çŸ¯æ­£ã«ç‰¹åŒ–ã—ãŸæŠ€è¡“ã§ã€ç¢ºå®Ÿãªè‚Œè³ªæ”¹å–„ã‚’å®Ÿç¾ã—ã¾ã™ã€‚</p>
+           </div>
+           <div class="p-8 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
+             <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(0,0,0,0.05);"><i data-lucide="shield-check" class="w-7 h-7"></i>
+             </div>
+             <h4 id="strength2_title" class="font-semibold text-lg mb-3"></h4>
+             <p class="text-sm opacity-70 leading-relaxed">åŒ»ç™‚ææºã«ã‚ˆã‚Šã€å®‰å¿ƒãƒ»å®‰å…¨ãªãƒ—ãƒ­ãƒ•ã‚§ãƒƒã‚·ãƒ§ãƒŠãƒ«ã‚±ã‚¢ã‚’ä¸€è²«ã—ã¦æä¾›ã—ã¾ã™ã€‚</p>
+           </div>
+           <div class="p-8 rounded-2xl text-center transition-smooth hover:shadow-lg" style="background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05);">
+             <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(0,0,0,0.05);"><i data-lucide="zap" class="w-7 h-7"></i>
+             </div>
+             <h4 id="strength3_title" class="font-semibold text-lg mb-3"></h4>
+             <p class="text-sm opacity-70 leading-relaxed">å³åŠ¹æ€§ã®é«˜ã„ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã§ã€æ¯å›ã®æ–½è¡“ã§ç¢ºã‹ãªå¤‰åŒ–ã‚’å®Ÿæ„Ÿã§ãã¾ã™ã€‚</p>
+           </div>
+         </div>
        </div>
-       <h4 id="strength3_title" class="font-semibold text-lg mb-3"></h4>
-       <p class="text-sm opacity-70 leading-relaxed">‘¦Œø«‚Ì‚‚¢ƒƒjƒ…[‚ÅA–ˆ‰ñ‚Ì{p‚ÅŠm‚©‚È•Ï‰»‚ğÀŠ´‚Å‚«‚Ü‚·B</p>
-      </div>
-     </div>
-    </div>
-   </section><!-- Doctor Section -->
-   <section id="doctor" class="py-24 md:py-32 px-6 md:px-12" style="background: linear-gradient(135deg, rgba(0,0,0,0.02), rgba(0,0,0,0.05));">
-    <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-16">
-      <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">Medical Partnership</p>
-      <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">Medical Partnership</p>
-      <h3 class="elegant-title text-4xl md:text-5xl mb-4 nav-ja">ˆãt‚Æ‚Ì’ñŒg‚É‚Â‚¢‚Ä</h3>
-      <h3 class="elegant-title text-4xl md:text-5xl mb-4 nav-en hidden">About Medical Partnership</h3>
-     </div>
-     <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-       <h4 class="font-semibold text-2xl mb-6 nav-ja">ˆãtŠÄC‚É‚æ‚éˆÀS</h4>
-       <h4 class="font-semibold text-2xl mb-6 nav-en hidden">Safety Through Medical Supervision</h4>
-       <p class="text-lg opacity-80 leading-relaxed mb-6 nav-ja">Scarlett‚Íˆãt‚ÌŠÄCE’ñŒg‚Ì‚à‚ÆAÅæ’[‚ÌƒXƒLƒ“ƒPƒA‹Zp‚ğ“±“ü‚µ‚Ä‚¢‚Ü‚·B</p>
-       <p class="text-lg opacity-80 leading-relaxed mb-6 nav-en hidden">Scarlett introduces cutting-edge skincare technology under medical supervision and partnership.</p>
-       <ul class="space-y-4 text-base opacity-75">
-        <li class="flex gap-3 nav-ja"><span>?</span> <span>ˆãŠw“Iª‹’‚ÉŠî‚Ã‚¢‚½{p</span></li>
-        <li class="flex gap-3 nav-en hidden"><span>?</span> <span>Evidence-based treatment</span></li>
-        <li class="flex gap-3 nav-ja"><span>?</span> <span>ˆÀ‘S«‚ğÅ—Dæ‚µ‚½‘I•ÊƒRƒXƒ</span></li>
-        <li class="flex gap-3 nav-en hidden"><span>?</span> <span>Carefully selected safe cosmetics</span></li>
-        <li class="flex gap-3 nav-ja"><span>?</span> <span>’èŠú“I‚È’mŒ©ƒAƒbƒvƒf[ƒg</span></li>
-        <li class="flex gap-3 nav-en hidden"><span>?</span> <span>Regular knowledge updates</span></li>
-       </ul>
-      </div>
-      <div class="p-8 rounded-2xl text-center" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);"><i data-lucide="award" class="w-20 h-20 mx-auto mb-6 opacity-40"></i>
-       <h5 class="font-semibold text-xl mb-2 nav-ja">Dr. Recella ADS”F’èƒTƒƒ“</h5>
-       <h5 class="font-semibold text-xl mb-2 nav-en hidden">Dr. Recella ADS Certified Salon</h5>
-       <p class="text-sm opacity-70 mb-6 nav-ja">ˆãtŠJ”­‚Ì‚‹@”\ƒRƒXƒuDr. Recellav‚ÌADS”F’èƒfƒB[ƒ‰[ƒTƒƒ“‚Å‚·B</p>
-       <p class="text-sm opacity-70 mb-6 nav-en hidden">Official ADS certified dealer salon for "Dr. Recella," a high-performance cosmetic developed by physicians.</p><a href="https://www.recella3d.com/guide/concept.php" target="_blank" rel="noopener noreferrer" class="px-6 py-2 rounded-full text-sm font-medium border border-current transition-all hover:opacity-60 nav-ja inline-block">Ú‚µ‚­Œ©‚é</a> <a href="https://www.recella3d.com/guide/concept.php" target="_blank" rel="noopener noreferrer" class="px-6 py-2 rounded-full text-sm font-medium border border-current transition-all hover:opacity-60 nav-en hidden inline-block">Learn More</a>
-      </div>
-     </div>
-    </div>
-   </section><!-- Menu Section -->
-   <section id="menu" class="py-24 md:py-32 px-6 md:px-12">
-    <div class="max-w-6xl mx-auto">
-     <div class="text-center mb-20">
-      <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">MENU</p>
-      <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">MENU</p>
-      <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-ja">{pƒƒjƒ…[</h3>
-      <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-en hidden">Treatment Menu</h3>
-     </div>
-     <div class="grid md:grid-cols-2 gap-8"><!-- Menu Item 1 -->
-      <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px solid #d4a574;">
-       <div class="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full opacity-10 transition-transform duration-500 group-hover:scale-150" style="background: #d4a574;"></div>
-       <div class="relative">
-        <div class="flex justify-between items-start mb-4">
-         <div>
-          <p class="text-xs tracking-widest mb-2 opacity-60 nav-ja">l‹C</p>
-          <p class="text-xs tracking-widest mb-2 opacity-60 nav-en hidden">POPULAR</p>
-          <h4 class="font-semibold text-lg nav-ja">¬ŠçƒRƒ‹ƒM</h4>
-          <h4 class="font-semibold text-lg nav-en hidden">Facial Contouring</h4>
-         </div><span class="font-semibold text-xl" style="color: #b8956a;">?12,000</span>
-        </div>
-        <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja">œ‚©‚ç®‚¦‚é–{Ši“I‚È¬Šç‹¸³B‚Ş‚­‚İE‚½‚é‚İ‚ÉƒAƒvƒ[ƒ`‚µAƒVƒƒ[ƒv‚ÈƒtƒFƒCƒXƒ‰ƒCƒ“‚ÖB</p>
-        <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden">Professional facial contouring that works from the bone structure. Reduces puffiness and sagging for a sharp jawline.</p>
-        <p class="text-xs opacity-60 nav-ja">{pŠÔF60•ª</p>
-        <p class="text-xs opacity-60 nav-en hidden">Duration: 60 minutes</p>
+     </section><!-- Doctor Section -->
+     <section id="doctor" class="py-24 md:py-32 px-6 md:px-12" style="background: linear-gradient(135deg, rgba(0,0,0,0.02), rgba(0,0,0,0.05));">
+       <div class="max-w-5xl mx-auto">
+         <div class="text-center mb-16">
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">Medical Partnership</p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">Medical Partnership</p>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-4 nav-ja">åŒ»å¸«ã¨ã®ææºã«ã¤ã„ã¦</h3>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-4 nav-en hidden">About Medical Partnership</h3>
+         </div>
+         <div class="grid md:grid-cols-2 gap-12 items-center">
+           <div>
+             <h4 class="font-semibold text-2xl mb-6 nav-ja">åŒ»å¸«ç›£ä¿®ã«ã‚ˆã‚‹å®‰å¿ƒ</h4>
+             <h4 class="font-semibold text-2xl mb-6 nav-en hidden">Safety Through Medical Supervision</h4>
+             <p class="text-lg opacity-80 leading-relaxed mb-6 nav-ja">Scarlettã¯åŒ»å¸«ã®ç›£ä¿®ãƒ»ææºã®ã‚‚ã¨ã€æœ€å…ˆç«¯ã®ã‚¹ã‚­ãƒ³ã‚±ã‚¢æŠ€è¡“ã‚’å°å…¥ã—ã¦ã„ã¾ã™ã€‚</p>
+             <p class="text-lg opacity-80 leading-relaxed mb-6 nav-en hidden">Scarlett introduces cutting-edge skincare technology under medical supervision and partnership.</p>
+             <ul class="space-y-4 text-base opacity-75">
+               <li class="flex gap-3 nav-ja"><span>âœ“</span> <span>åŒ»å­¦çš„æ ¹æ‹ ã«åŸºã¥ã„ãŸæ–½è¡“</span></li>
+               <li class="flex gap-3 nav-en hidden"><span>âœ“</span> <span>Evidence-based treatment</span></li>
+               <li class="flex gap-3 nav-ja"><span>âœ“</span> <span>å®‰å…¨æ€§ã‚’æœ€å„ªå…ˆã—ãŸé¸åˆ¥ã‚³ã‚¹ãƒ¡</span></li>
+               <li class="flex gap-3 nav-en hidden"><span>âœ“</span> <span>Carefully selected safe cosmetics</span></li>
+               <li class="flex gap-3 nav-ja"><span>âœ“</span> <span>å®šæœŸçš„ãªçŸ¥è¦‹ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ</span></li>
+               <li class="flex gap-3 nav-en hidden"><span>âœ“</span> <span>Regular knowledge updates</span></li>
+             </ul>
+           </div>
+           <div class="p-8 rounded-2xl text-center" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);"><i data-lucide="award" class="w-20 h-20 mx-auto mb-6 opacity-40"></i>[...]
+             <h5 class="font-semibold text-xl mb-2 nav-ja">Dr. Recella ADSèªå®šã‚µãƒ­ãƒ³</h5>
+             <h5 class="font-semibold text-xl mb-2 nav-en hidden">Dr. Recella ADS Certified Salon</h5>
+             <p class="text-sm opacity-70 mb-6 nav-ja">åŒ»å¸«é–‹ç™ºã®é«˜æ©Ÿèƒ½ã‚³ã‚¹ãƒ¡ã€ŒDr. Recellaã€ã®ADSèªå®šãƒ‡ã‚£ãƒ¼ãƒ©ãƒ¼ã‚µãƒ­ãƒ³ã§ã™ã€‚</p>
+             <p class="text-sm opacity-70 mb-6 nav-en hidden">Official ADS certified dealer salon for "Dr. Recella," a high-performance cosmetic developed by physicians.</p><a href="https://www.recella[...]
+           </div>
+         </div>
        </div>
-      </div><!-- Menu Item 2 -->
-      <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px solid #d4a574;">
-       <div class="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full opacity-10 transition-transform duration-500 group-hover:scale-150" style="background: #d4a574;"></div>
-       <div class="relative">
-        <div class="flex justify-between items-start mb-4">
-         <div>
-          <h4 class="font-semibold text-lg nav-ja">”ü”§ƒtƒFƒCƒVƒƒƒ‹</h4>
-          <h4 class="font-semibold text-lg nav-en hidden">Beauty Facial</h4>
-         </div><span class="font-semibold text-xl" style="color: #b8956a;">?10,000</span>
-        </div>
-        <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja">‚¨”§‚Ìó‘Ô‚É‡‚í‚¹‚½ƒI[ƒ_[ƒƒCƒh‚ÌƒtƒFƒCƒVƒƒƒ‹B“§–¾Š´‚Ì‚ ‚é”ü‚µ‚¢”§‚Ö“±‚«‚Ü‚·B</p>
-        <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden">Customized facial tailored to your skin condition. Achieves radiant, beautiful skin.</p>
-        <p class="text-xs opacity-60 nav-ja">{pŠÔF50•ª</p>
-        <p class="text-xs opacity-60 nav-en hidden">Duration: 50 minutes</p>
+     </section><!-- Menu Section -->
+     <section id="menu" class="py-24 md:py-32 px-6 md:px-12">
+       <div class="max-w-6xl mx-auto">
+         <div class="text-center mb-20">
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">MENU</p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">MENU</p>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-ja">æ–½è¡“ãƒ¡ãƒ‹ãƒ¥ãƒ¼</h3>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-en hidden">Treatment Menu</h3>
+         </div>
+         <div class="grid md:grid-cols-2 gap-8"><!-- Menu Item 1 -->
+           <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px[...]
+             <div class="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full opacity-10 transition-transform duration-500 group-hover:scale-150" style="background: #d4a574;"></div>
+             <div class="relative">
+               <div class="flex justify-between items-start mb-4">
+                 <div>
+                   <p class="text-xs tracking-widest mb-2 opacity-60 nav-ja">äººæ°—</p>
+                   <p class="text-xs tracking-widest mb-2 opacity-60 nav-en hidden">POPULAR</p>
+                   <h4 class="font-semibold text-lg nav-ja">å°é¡”ã‚³ãƒ«ã‚®</h4>
+                   <h4 class="font-semibold text-lg nav-en hidden">Facial Contouring</h4>
+                 </div><span class="font-semibold text-xl" style="color: #b8956a;">Â¥12,000</span>
+               </div>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja">éª¨ã‹ã‚‰æ•´ãˆã‚‹æœ¬æ ¼çš„ãªå°é¡”çŸ¯æ­£ã€‚ã‚€ãã¿ãƒ»ãŸã‚‹ã¿ã«ã‚¢ãƒ—ãƒ­ãƒ¼ãƒã—ã€ã‚·ãƒ£ãƒ¼ãƒ—ãªãƒ•ã‚§ã‚¤ã‚¹ãƒ©ã‚¤ãƒ³ã¸[...]
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden">Professional facial contouring that works from the bone structure. Reduces puffiness and sagging for a sharp jawline.</p>
+               <p class="text-xs opacity-60 nav-ja">æ–½è¡“æ™‚é–“ï¼š60åˆ†</p>
+               <p class="text-xs opacity-60 nav-en hidden">Duration: 60 minutes</p>
+             </div>
+           </div><!-- Menu Item 2 -->
+           <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px[...]
+             <div class="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full opacity-10 transition-transform duration-500 group-hover:scale-150" style="background: #d4a574;"></div>
+             <div class="relative">
+               <div class="flex justify-between items-start mb-4">
+                 <div>
+                   <h4 class="font-semibold text-lg nav-ja">ç¾è‚Œãƒ•ã‚§ã‚¤ã‚·ãƒ£ãƒ«</h4>
+                   <h4 class="font-semibold text-lg nav-en hidden">Beauty Facial</h4>
+                 </div><span class="font-semibold text-xl" style="color: #b8956a;">Â¥10,000</span>
+               </div>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja">ãŠè‚Œã®çŠ¶æ…‹ã«åˆã‚ã›ãŸã‚ªãƒ¼ãƒ€ãƒ¼ãƒ¡ã‚¤ãƒ‰ã®ãƒ•ã‚§ã‚¤ã‚·ãƒ£ãƒ«ã€‚é€æ˜æ„Ÿã®ã‚ã‚‹ç¾ã—ã„è‚Œã¸å°ãã¾ã™ã€‚</p>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden">Customized facial tailored to your skin condition. Achieves radiant, beautiful skin.</p>
+               <p class="text-xs opacity-60 nav-ja">æ–½è¡“æ™‚é–“ï¼š50åˆ†</p>
+               <p class="text-xs opacity-60 nav-en hidden">Duration: 50 minutes</p>
+             </div>
+           </div><!-- Menu Item 3 -->
+           <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px[...]
+             <div class="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full opacity-10 transition-transform duration-500 group-hover:scale-150" style="background: #d4a574;"></div>
+             <div class="relative">
+               <div class="flex justify-between items-start mb-4">
+                 <div>
+                   <h4 class="font-semibold text-lg nav-ja">ãƒªãƒ•ãƒˆã‚¢ãƒƒãƒ—ã‚±ã‚¢</h4>
+                   <h4 class="font-semibold text-lg nav-en hidden">Lift-Up Care</h4>
+                 </div><span class="font-semibold text-xl" style="color: #b8956a;">Â¥15,000</span>
+               </div>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja">ãŸã‚‹ã¿ãŒæ°—ã«ãªã‚‹æ–¹ã«ã€‚ç­‹è†œãƒªãƒªãƒ¼ã‚¹ã¨EMSæ©Ÿå™¨ã‚’çµ„ã¿åˆã‚ã›ãŸé›†ä¸­ãƒªãƒ•ãƒˆã‚¢ãƒƒãƒ—ã€‚</p>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden">Intensive lift-up combining fascia release and EMS technology for those concerned with sagging.</p>
+               <p class="text-xs opacity-60 nav-ja">æ–½è¡“æ™‚é–“ï¼š75åˆ†</p>
+               <p class="text-xs opacity-60 nav-en hidden">Duration: 75 minutes</p>
+             </div>
+           </div><!-- Menu Item 4 - Special Trial Course -->
+           <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px[...]
+             <div class="absolute top-4 right-4"><span class="text-xs tracking-widest px-3 py-1 rounded-full font-semibold nav-ja" style="background: #b8956a; color: white;">åˆå›é™å®š</span> <span c[...]
+             </div>
+             <div class="relative">
+               <p class="text-xs tracking-widest mb-2 opacity-60 nav-ja">ãƒˆãƒ©ã‚¤ã‚¢ãƒ«ã‚³ãƒ¼ã‚¹</p>
+               <p class="text-xs tracking-widest mb-2 opacity-60 nav-en hidden">TRIAL COURSE</p>
+               <h4 class="font-semibold text-lg mb-2 nav-ja">ãŠè©¦ã—ãƒˆãƒ¼ã‚¿ãƒ«ã‚±ã‚¢</h4>
+               <h4 class="font-semibold text-lg mb-2 nav-en hidden">Total Care Trial</h4>
+               <div class="flex items-baseline gap-3 mb-4"><span class="font-semibold text-2xl" style="color: #b8956a;">Â¥6,980</span> <span class="text-sm line-through opacity-40">Â¥15,000</span>
+               </div>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja">å°é¡”ã‚³ãƒ«ã‚®ï¼‹ç¾è‚Œãƒ•ã‚§ã‚¤ã‚·ãƒ£ãƒ«ã®è´…æ²¢ã‚³ãƒ¼ã‚¹ã€‚åˆã‚ã¦ã®æ–¹é™å®šã®ç‰¹åˆ¥ä¾¡æ ¼ã€‚</p>
+               <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden">Luxurious combination of facial contouring and beauty facial. Special introductory price for first-time clients only.</p>
+               <p class="text-xs opacity-60 nav-ja">æ–½è¡“æ™‚é–“ï¼š90åˆ†</p>
+               <p class="text-xs opacity-60 nav-en hidden">Duration: 90 minutes</p>
+             </div>
+           </div>
+         </div>
        </div>
-      </div><!-- Menu Item 3 -->
-      <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px solid #d4a574;">
-       <div class="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full opacity-10 transition-transform duration-500 group-hover:scale-150" style="background: #d4a574;"></div>
-       <div class="relative">
-        <div class="flex justify-between items-start mb-4">
-         <div>
-          <h4 class="font-semibold text-lg nav-ja">ƒŠƒtƒgƒAƒbƒvƒPƒA</h4>
-          <h4 class="font-semibold text-lg nav-en hidden">Lift-Up Care</h4>
-         </div><span class="font-semibold text-xl" style="color: #b8956a;">?15,000</span>
-        </div>
-        <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja">‚½‚é‚İ‚ª‹C‚É‚È‚é•û‚ÉB‹Ø–ŒƒŠƒŠ[ƒX‚ÆEMS‹@Ší‚ğ‘g‚İ‡‚í‚¹‚½W’†ƒŠƒtƒgƒAƒbƒvB</p>
-        <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden">Intensive lift-up combining fascia release and EMS technology for those concerned with sagging.</p>
-        <p class="text-xs opacity-60 nav-ja">{pŠÔF75•ª</p>
-        <p class="text-xs opacity-60 nav-en hidden">Duration: 75 minutes</p>
+     </section><!-- Staff Section -->
+     <section id="staff" class="py-24 md:py-32 px-6 md:px-12">
+       <div class="max-w-5xl mx-auto">
+         <div class="text-center mb-16">
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">STAFF</p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">STAFF</p>
+           <h3 class="elegant-title text-4xl md:text-5xl nav-ja">ã‚¹ã‚¿ãƒƒãƒ•ç´¹ä»‹</h3>
+           <h3 class="elegant-title text-4xl md:text-5xl nav-en hidden">About Our Staff</h3>
+         </div><!-- Staff Grid -->
+         <div class="flex justify-center mt-16">
+           <div class="group rounded-2xl overflow-hidden transition-smooth hover:shadow-xl max-w-sm" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
+             <div class="h-48 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-6xl">
+               ğŸ“¸
+             </div>
+             <div class="p-8">
+               <h4 class="font-semibold text-xl mb-2">éˆ´æœ¨ç”±ç´€å­</h4>
+               <p class="text-sm mb-4 font-medium" style="color: #b8956a;">Manager</p>
+               <div class="flex flex-wrap gap-2 mb-6"><span class="text-xs px-3 py-1 rounded-full" style="background: rgba(184, 149, 106, 0.1); color: #b8956a;">ãƒ‹ã‚­ãƒ“</span> <span class="text-xs px-[...]
+               </div>
+               <p class="text-sm opacity-75 leading-relaxed mb-4">ã™ãã«å®Ÿæ„Ÿã§ãã‚‹æ–½è¡“ã«è‡ªä¿¡ãŒã‚ã‚Šã¾ã™â— éå»ã«ãŠè‚ŒãŒè’ã‚Œã¦ã—ã¾ã„æ”¹å–„ã™ã‚‹ã¾ã§è‹¦åŠ´ã—ãŸçµŒé¨“ãŒã‚[...]
+               <p class="text-sm opacity-75 leading-relaxed">ãŠè‚Œã¯ã¨ã¦ã‚‚ç¹Šç´°ã§ã™ã€ãŠå®¢æ§˜ãã‚Œãã‚Œã®ãƒˆãƒ©ãƒ–ãƒ«ã®åŸå› ã‚’ä¸€ç·’ã«æ¢ã‚ŠãªãŒã‚‰è§£æ±ºã—ã€ç¾è‚Œã®ãŠæ‰‹ä¼ã„ã‚’[...]
+             </div>
+           </div>
+         </div>
        </div>
-      </div><!-- Menu Item 4 - Special Trial Course -->
-      <div class="group relative overflow-hidden p-8 md:p-10 transition-all duration-500 rounded-xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05); border-left: 3px solid #d4a574;">
-       <div class="absolute top-4 right-4"><span class="text-xs tracking-widest px-3 py-1 rounded-full font-semibold nav-ja" style="background: #b8956a; color: white;">‰‰ñŒÀ’è</span> <span class="text-xs tracking-widest px-3 py-1 rounded-full font-semibold nav-en hidden" style="background: #b8956a; color: white;">FIRST-TIME ONLY</span>
+     </section><!-- Testimonials Section -->
+     <section id="testimonials" class="py-24 md:py-32 px-6 md:px-12" style="background: rgba(0,0,0,0.02);">
+       <div class="max-w-6xl mx-auto">
+         <div class="text-center mb-16">
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">VOICE</p>
+           <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">VOICE</p>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-ja">ãŠå®¢æ§˜ã®å£°</h3>
+           <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-en hidden">Customer Voices</h3>
+         </div>
+         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+           <!-- Testimonial 1 -->
+           <div class="p-8 rounded-2xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
+             <div class="flex items-center gap-2 mb-4 text-lg">
+               â­â­â­â­â­
+             </div>
+             <p class="text-base opacity-80 leading-relaxed mb-6 nav-ja">åˆã‚ã¦è¨ªã‚ŒãŸæ™‚ã‹ã‚‰ã€ã‚¹ã‚¿ãƒƒãƒ•ã®æ–¹ã®ä¸å¯§ãªå¯¾å¿œã¨è½ã¡ç€ã„ãŸç©ºé–“ã«ç™’ã•ã‚Œã¾ã—ãŸã€‚å°é¡”ã‚³ãƒ«[[...]
+             <p class="text-base opacity-80 leading-relaxed mb-6 nav-en hidden">From my first visit, I was healed by the staff's careful attention and calm atmosphere. The facial contouring exceeded my[...]
+             <div class="border-t pt-4" style="border-color: rgba(0,0,0,0.1);">
+               <p class="text-sm opacity-60 nav-ja">30ä»£ ä¼šç¤¾å“¡ Mæ§˜</p>
+               <p class="text-sm opacity-60 nav-en hidden">M.K., 30s, Office Worker</p>
+             </div>
+           </div><!-- Testimonial 2 -->
+           <div class="p-8 rounded-2xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
+             <div class="flex items-center gap-2 mb-4 text-lg">
+               â­â­â­â­â­
+             </div>
+             <p class="text-base opacity-80 leading-relaxed mb-6 nav-ja">è‚ŒãŒæ•æ„Ÿã§æ‚©ã‚“ã§ã„ã¾ã—ãŸãŒã€ä¸å¯§ãªã‚«ã‚¦ãƒ³ã‚»ãƒªãƒ³ã‚°ã®ãŠã‹ã’ã§è‡ªåˆ†ã«åˆã£ãŸæ–½è¡“ã‚’å—ã‘ã‚‰ã‚Œ[[...]
+             <p class="text-base opacity-80 leading-relaxed mb-6 nav-en hidden">I was concerned about sensitive skin, but thanks to the careful counseling, I received treatment suited to me. My skin qu[...]
+             <div class="border-t pt-4" style="border-color: rgba(0,0,0,0.1);">
+               <p class="text-sm opacity-60 nav-ja">20ä»£ ãƒ•ãƒªãƒ¼ãƒ©ãƒ³ã‚¹ Kæ§˜</p>
+               <p class="text-sm opacity-60 nav-en hidden">K.S., 20s, Freelancer</p>
+             </div>
+           </div><!-- Testimonial 3 -->
+           <div class="p-8 rounded-2xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
+             <div class="flex items-center gap-2 mb-4 text-lg">
+               â­â­â­â­â­
+             </div>
+             <p class="text-base opacity-80 leading-relaxed mb-6 nav-ja">ãŸã‚‹ã¿ãŒæ°—ã«ãªã£ã¦å§‹ã‚ãŸãƒªãƒ•ãƒˆã‚¢ãƒƒãƒ—ã‚±ã‚¢ã€‚ãƒ—ãƒ­ã®æ–½è¡“ã§å®Ÿæ„Ÿã§ãã‚‹å¤‰åŒ–ãŒã‚ã‚Šã€3ãƒ¶æœˆã§é¡”[[...]
+             <p class="text-base opacity-80 leading-relaxed mb-6 nav-en hidden">I started lift-up care due to sagging concerns. I can feel real changes from professional treatment, and my face looks yo[...]
+             <div class="border-t pt-4" style="border-color: rgba(0,0,0,0.1);">
+               <p class="text-sm opacity-60 nav-ja">40ä»£ å–¶æ¥­è· Sæ§˜</p>
+               <p class="text-sm opacity-60 nav-en hidden">S.T., 40s, Sales</p>
+             </div>
+           </div>
+         </div>
        </div>
-       <div class="relative">
-        <p class="text-xs tracking-widest mb-2 opacity-60 nav-ja">ƒgƒ‰ƒCƒAƒ‹ƒR[ƒX</p>
-        <p class="text-xs tracking-widest mb-2 opacity-60 nav-en hidden">TRIAL COURSE</p>
-        <h4 class="font-semibold text-lg mb-2 nav-ja">‚¨‚µƒg[ƒ^ƒ‹ƒPƒA</h4>
-        <h4 class="font-semibold text-lg mb-2 nav-en hidden">Total Care Trial</h4>
-        <div class="flex items-baseline gap-3 mb-4"><span class="font-semibold text-2xl" style="color: #b8956a;">?6,980</span> <span class="text-sm line-through opacity-40">?15,000</span>
-        </div>
-        <p class="text-sm opacity-75 leading-relaxed mb-4 nav-ja">¬ŠçƒRƒ‹ƒM{”ü”§ƒtƒFƒCƒVƒƒƒ‹‚ÌæÒ‘òƒR[ƒXB‰‚ß‚Ä‚Ì•ûŒÀ’è‚Ì“Á•Ê‰¿ŠiB</p>
-        <p class="text-sm opacity-75 leading-relaxed mb-4 nav-en hidden">Luxurious combination of facial contouring and beauty facial. Special introductory price for first-time clients only.</p>
-        <p class="text-xs opacity-60 nav-ja">{pŠÔF90•ª</p>
-        <p class="text-xs opacity-60 nav-en hidden">Duration: 90 minutes</p>
+     </section><!-- CTA Section -->
+     <section id="cta-section" class="py-20 md:py-28 px-6 md:px-12 text-center" style="background: linear-gradient(135deg, rgba(0,0,0,0.03), rgba(0,0,0,0.06));">
+       <div class="max-w-3xl mx-auto">
+         <h3 class="elegant-title text-3xl md:text-5xl mb-8 nav-ja">ã”äºˆç´„ã¯ã“ã¡ã‚‰</h3>
+         <h3 class="elegant-title text-3xl md:text-5xl mb-8 nav-en hidden">Book Now</h3>
+         <p class="text-lg opacity-75 mb-10 nav-ja">å®Œå…¨äºˆç´„åˆ¶ã¨ãªã£ã¦ãŠã‚Šã¾ã™ã€‚<br>
+           ãŠé›»è©±ãƒ»LINEãƒ»HotPepperBeautyã‚ˆã‚Šã”äºˆç´„ã‚’ãŠå¾…ã¡ã—ã¦ãŠã‚Šã¾ã™ã€‚</p>
+         <p class="text-lg opacity-75 mb-10 nav-en hidden">By appointment only. Please feel free to contact us by phone or LINE.</p>
+         <div class="flex flex-wrap gap-4 justify-center">
+           <a href="tel:09033702270" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 active:scale-95" style="background: rgba(184, 149, 106, 0.1);[...]
+             <svg width="18" height="18" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <circle cx="6" cy="10" r="2.5" fill="white" /> <circle cx="12" cy="6" r="2.5" fill="white" /> <circle cx="18" cy="10" r="2.5" fill="white" /> <path d="M12 9 L12 18" stroke="white" stroke-[...]
+             </svg></a> <a href="https://www.instagram.com/scarlett_kitasando_ethtetic?igsh=MWZvNnRqY21weWtmcQ==" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-lg flex items-center[...]
+           </div>
+         </div>
        </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Staff Section -->
-   <section id="staff" class="py-24 md:py-32 px-6 md:px-12">
-    <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-16">
-      <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">STAFF</p>
-      <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">STAFF</p>
-      <h3 class="elegant-title text-4xl md:text-5xl nav-ja">ƒXƒ^ƒbƒtĞ‰î</h3>
-      <h3 class="elegant-title text-4xl md:text-5xl nav-en hidden">About Our Staff</h3>
-     </div><!-- Staff Grid -->
-     <div class="flex justify-center mt-16">
-      <div class="group rounded-2xl overflow-hidden transition-smooth hover:shadow-xl max-w-sm" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
-       <div class="h-48 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-6xl">
-        ???
+     </section><!-- Info Section -->
+     <section id="info" class="py-24 md:py-32 px-6 md:px-12" style="background: rgba(0,0,0,0.02);">
+       <div class="max-w-5xl mx-auto">
+         <div class="grid md:grid-cols-2 gap-16">
+           <div>
+             <h4 class="font-semibold text-xl mb-6 nav-ja flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5"></i>ã‚¢ã‚¯ã‚»ã‚¹ãƒ»å–¶æ¥­æƒ…å ±</h4>
+             <h4 class="font-semibold text-xl mb-6 nav-en hidden flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5"></i>Access &amp; Hours</h4>
+             <div class="space-y-8">
+               <div>
+                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-ja">ä½æ‰€</p>
+                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-en hidden">Address</p>
+                 <p class="text-base opacity-85 mb-6 nav-ja">ã€’151-0051<br>
+                   æ±äº¬éƒ½æ¸‹è°·åŒºåƒé§„ãƒ¶è°·3ä¸ç›®13-14 401å·å®¤</p>
+                 <p class="text-base opacity-85 mb-6 nav-en hidden">151-0051<br>
+                   3-13-14 Sendagaya, Shibuya-ku, Tokyo 401</p><a href="https://maps.app.goo.gl/RQJHBzHaBEqgsQEV8?g_st=ac" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 rounded-[...]
+               </div>
+               <div>
+                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-ja">ã‚¢ã‚¯ã‚»ã‚¹</p>
+                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-en hidden">Access</p>
+                 <p class="text-base opacity-85 nav-ja">æ±äº¬ãƒ¡ãƒˆãƒ­å‰¯éƒ½å¿ƒç·šã€ŒåŒ—å‚é“é§…ã€å¾’æ­©30ç§’<br>
+                   JRå±±æ‰‹ç·šã€Œä»£ã€…æœ¨é§…ã€å¾’æ­©10åˆ†</p>
+                 <p class="text-base opacity-85 nav-en hidden">30 sec walk from Kita-Sando Station (Tokyo Metro Fukutoshin Line)<br>
+                   10 min walk from Yoyogi Station (JR Yamanote Line)</p>
+               </div>
+               <div>
+                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-ja">å–¶æ¥­æ™‚é–“</p>
+                 <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-en hidden">Hours</p>
+                 <p class="text-base opacity-85 nav-ja">10:00ï½22:00ï¼ˆæœ€çµ‚å—ä»˜ 21:00ï¼‰<br><span class="text-sm">å®šä¼‘æ—¥ï¼šç«æ›œæ—¥</span></p>
+                 <p class="text-base opacity-85 nav-en hidden">10:00 - 22:00 (Last appointment: 21:00)<br><span class="text-sm">Closed: Tuesdays</span></p>
+               </div>
+             </div>
+           </div>
+           <div>
+             <h4 class="font-semibold text-xl mb-6 nav-ja flex items-center gap-2"><i data-lucide="phone" class="w-5 h-5"></i>ãŠå•ã„åˆã‚ã›</h4>
+             <h4 class="font-semibold text-xl mb-6 nav-en hidden flex items-center gap-2"><i data-lucide="phone" class="w-5 h-5"></i>Contact</h4>
+             <div class="p-8 rounded-2xl text-center" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
+               <p class="text-sm opacity-70 mb-6 nav-ja">ãŠé›»è©±ã¾ãŸã¯LINEã‚ˆã‚ŠãŠå•ã„åˆã‚ã›ãã ã•ã„ã€‚</p>
+               <p class="text-sm opacity-70 mb-6 nav-en hidden">Please contact us via phone or LINE.</p><a href="tel:09033702270" class="text-3xl font-bold block mb-8 hover:opacity-70 transition-opacity[...]
+               <div class="flex flex-col gap-3">
+                 <a href="https://line.me/R/ti/p/@521hhscf" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full font-semibold transition-all hover:opacity-80 nav-ja" style="background[...]
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
        </div>
-       <div class="p-8">
-        <h4 class="font-semibold text-xl mb-2">—é–Ø—R‹Iq</h4>
-        <p class="text-sm mb-4 font-medium" style="color: #b8956a;">Manager</p>
-        <div class="flex flex-wrap gap-2 mb-6"><span class="text-xs px-3 py-1 rounded-full" style="background: rgba(184, 149, 106, 0.1); color: #b8956a;">ƒjƒLƒr</span> <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(184, 149, 106, 0.1); color: #b8956a;">”§r‚ê</span> <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(184, 149, 106, 0.1); color: #b8956a;">–ÑŒŠ</span> <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(184, 149, 106, 0.1); color: #b8956a;">¬Šç‹¸³</span> <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(184, 149, 106, 0.1); color: #b8956a;">ƒ{ƒfƒB</span>
-        </div>
-        <p class="text-sm opacity-75 leading-relaxed mb-4">‚·‚®‚ÉÀŠ´‚Å‚«‚é{p‚É©M‚ª‚ ‚è‚Ü‚· ‰ß‹‚É‚¨”§‚ªr‚ê‚Ä‚µ‚Ü‚¢‰ü‘P‚·‚é‚Ü‚Å‹ê˜J‚µ‚½ŒoŒ±‚ª‚ ‚èA‚»‚Ì‚æ‚¤‚È•ûX‚Ì‹C‚¿‚ª‚æ‚­‚í‚©‚è‚Ü‚·B</p>
-        <p class="text-sm opacity-75 leading-relaxed">‚¨”§‚Í‚Æ‚Ä‚à‘@×‚Å‚·A‚¨‹q—l‚»‚ê‚¼‚ê‚Ìƒgƒ‰ƒuƒ‹‚ÌŒ´ˆö‚ğˆê‚É’T‚è‚È‚ª‚ç‰ğŒˆ‚µA”ü”§‚Ì‚¨è“`‚¢‚ğ‚¢‚½‚µ‚Ü‚·B</p>
+     </section><!-- Footer -->
+     <footer id="footer" class="py-12 px-6 md:px-12 border-t mt-auto" style="border-color: rgba(0,0,0,0.1);">
+       <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+         <p id="footer-logo" class="elegant-title text-xl font-semibold"></p>
+         <p class="text-sm opacity-60 nav-ja">Copyright Â© 2026 Scarlett</p>
+         <p class="text-sm opacity-60 nav-en hidden">Copyright Â© 2026 Scarlett</p>
        </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Testimonials Section -->
-   <section id="testimonials" class="py-24 md:py-32 px-6 md:px-12" style="background: rgba(0,0,0,0.02);">
-    <div class="max-w-6xl mx-auto">
-     <div class="text-center mb-16">
-      <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-ja">VOICE</p>
-      <p class="text-sm tracking-[0.3em] mb-4 opacity-60 uppercase nav-en hidden">VOICE</p>
-      <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-ja">‚¨‹q—l‚Ìº</h3>
-      <h3 class="elegant-title text-4xl md:text-5xl mb-8 nav-en hidden">Customer Voices</h3>
-     </div>
-     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Testimonial 1 -->
-      <div class="p-8 rounded-2xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
-       <div class="flex items-center gap-2 mb-4 text-lg">
-        ?????
-       </div>
-       <p class="text-base opacity-80 leading-relaxed mb-6 nav-ja">‰‚ß‚Ä–K‚ê‚½‚©‚çAƒXƒ^ƒbƒt‚Ì•û‚Ì’š”J‚È‘Î‰‚Æ—‚¿’…‚¢‚½‹óŠÔ‚É–ü‚³‚ê‚Ü‚µ‚½B¬ŠçƒRƒ‹ƒM‚Í‘z‘œˆÈã‚ÌŒø‰Ê‚ÅA—Fl‚É‚àuŠç‚ª¬‚³‚­‚È‚Á‚½v‚ÆŒ¾‚í‚ê‚é‚æ‚¤‚ÉB¡‚Å‚ÍŒ1‰ñ‚Ì’Ê‚¢‚ª„‚ÌŠy‚µ‚İ‚É‚È‚Á‚Ä‚¢‚Ü‚·B</p>
-       <p class="text-base opacity-80 leading-relaxed mb-6 nav-en hidden">From my first visit, I was healed by the staff's careful attention and calm atmosphere. The facial contouring exceeded my expectations, and friends told me my face looked smaller. Now my monthly visits have become my joy.</p>
-       <div class="border-t pt-4" style="border-color: rgba(0,0,0,0.1);">
-        <p class="text-sm opacity-60 nav-ja">30‘ã ‰ïĞˆõ M—l</p>
-        <p class="text-sm opacity-60 nav-en hidden">M.K., 30s, Office Worker</p>
-       </div>
-      </div><!-- Testimonial 2 -->
-      <div class="p-8 rounded-2xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
-       <div class="flex items-center gap-2 mb-4 text-lg">
-        ?????
-       </div>
-       <p class="text-base opacity-80 leading-relaxed mb-6 nav-ja">”§‚ª•qŠ´‚Å”Y‚ñ‚Å‚¢‚Ü‚µ‚½‚ªA’š”J‚ÈƒJƒEƒ“ƒZƒŠƒ“ƒO‚Ì‚¨‚©‚°‚Å©•ª‚É‡‚Á‚½{p‚ğó‚¯‚ç‚ê‚Ü‚µ‚½B”ü”§ƒtƒFƒCƒVƒƒƒ‹‚Ì‚¨‚©‚°‚Å”§¿‚ª‰ü‘P‚µA‰»Ï‚Ì‚è‚ªŠi’i‚É—Ç‚­‚È‚Á‚½‚Ì‚ğÀŠ´‚µ‚Ä‚¢‚Ü‚·B</p>
-       <p class="text-base opacity-80 leading-relaxed mb-6 nav-en hidden">I was concerned about sensitive skin, but thanks to the careful counseling, I received treatment suited to me. My skin quality has improved thanks to the beauty facial, and I can feel that my makeup applies much better.</p>
-       <div class="border-t pt-4" style="border-color: rgba(0,0,0,0.1);">
-        <p class="text-sm opacity-60 nav-ja">20‘ã ƒtƒŠ[ƒ‰ƒ“ƒX K—l</p>
-        <p class="text-sm opacity-60 nav-en hidden">K.S., 20s, Freelancer</p>
-       </div>
-      </div><!-- Testimonial 3 -->
-      <div class="p-8 rounded-2xl" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
-       <div class="flex items-center gap-2 mb-4 text-lg">
-        ?????
-       </div>
-       <p class="text-base opacity-80 leading-relaxed mb-6 nav-ja">‚½‚é‚İ‚ª‹C‚É‚È‚Á‚Än‚ß‚½ƒŠƒtƒgƒAƒbƒvƒPƒABƒvƒ‚Ì{p‚ÅÀŠ´‚Å‚«‚é•Ï‰»‚ª‚ ‚èA3ƒ–Œ‚ÅŠç‚ÌˆóÛ‚ªá•Ô‚è‚Ü‚µ‚½B–kQ“¹‰w‚©‚ç‹ß‚¢‚Ì‚Åd–‹A‚è‚ÉŠñ‚ê‚é‚Ì‚à•‚©‚è‚Ü‚·B</p>
-       <p class="text-base opacity-80 leading-relaxed mb-6 nav-en hidden">I started lift-up care due to sagging concerns. I can feel real changes from professional treatment, and my face looks younger after 3 months. It's convenient being close to Kita-Sando Station.</p>
-       <div class="border-t pt-4" style="border-color: rgba(0,0,0,0.1);">
-        <p class="text-sm opacity-60 nav-ja">40‘ã ‰c‹ÆE S—l</p>
-        <p class="text-sm opacity-60 nav-en hidden">S.T., 40s, Sales</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- CTA Section -->
-   <section id="cta-section" class="py-20 md:py-28 px-6 md:px-12 text-center" style="background: linear-gradient(135deg, rgba(0,0,0,0.03), rgba(0,0,0,0.06));">
-    <div class="max-w-3xl mx-auto">
-     <h3 class="elegant-title text-3xl md:text-5xl mb-8 nav-ja">‚²—\–ñ‚Í‚±‚¿‚ç</h3>
-     <h3 class="elegant-title text-3xl md:text-5xl mb-8 nav-en hidden">Book Now</h3>
-     <p class="text-lg opacity-75 mb-10 nav-ja">Š®‘S—\–ñ§‚Æ‚È‚Á‚Ä‚¨‚è‚Ü‚·B<br>
-       ‚¨“d˜bELINEEHotPepperBeauty‚æ‚è‚²—\–ñ‚ğ‚¨‘Ò‚¿‚µ‚Ä‚¨‚è‚Ü‚·B</p>
-     <p class="text-lg opacity-75 mb-10 nav-en hidden">By appointment only. Please feel free to contact us by phone or LINE.</p>
-     <div class="flex flex-wrap gap-4 justify-center">
-      <a href="tel:09033702270" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 active:scale-95" style="background: rgba(184, 149, 106, 0.1); color: #b8956a; border: 2px solid #b8956a; cursor: pointer;" title="“d˜b‚Å—\–ñ"> <i data-lucide="phone" class="w-5 h-5"></i> </a> <a href="https://line.me/R/ti/p/@521hhscf" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 active:scale-95" style="background: #00b900; color: white; border: 2px solid #00b900; cursor: pointer;" title="LINE‚Å—\–ñ"> <i data-lucide="message-circle" class="w-5 h-5"></i></a> <a href="https://beauty.hotpepper.jp/kr/slnH000753777/?vos" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 active:scale-95" style="background: linear-gradient(135deg, #ff69b4, #ff4d94); color: white; border: 2px solid #ff69b4; cursor: pointer;" title="HotPepperBeauty‚©‚ç—\–ñ">
-       <svg width="18" height="18" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="6" cy="10" r="2.5" fill="white" /> <circle cx="12" cy="6" r="2.5" fill="white" /> <circle cx="18" cy="10" r="2.5" fill="white" /> <path d="M12 9 L12 18" stroke="white" stroke-width="2" stroke-linecap="round" /> <path d="M8 14 L16 14" stroke="white" stroke-width="2" stroke-linecap="round" />
-       </svg></a> <a href="https://www.instagram.com/scarlett_kitasando_ethtetic?igsh=MWZvNnRqY21weWtmcQ==" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-lg flex items-center justify-center transition-all transform hover:scale-110 active:scale-95" style="background: rgba(184, 149, 106, 0.1); color: #b8956a; border: 2px solid #b8956a; cursor: pointer;" title="Instagram‚ğƒtƒHƒ["> <i data-lucide="instagram" class="w-5 h-5"></i> </a>
-     </div>
-    </div>
-   </section><!-- Info Section -->
-   <section id="info" class="py-24 md:py-32 px-6 md:px-12" style="background: rgba(0,0,0,0.02);">
-    <div class="max-w-5xl mx-auto">
-     <div class="grid md:grid-cols-2 gap-16">
-      <div>
-       <h4 class="font-semibold text-xl mb-6 nav-ja flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5"></i>ƒAƒNƒZƒXE‰c‹Æî•ñ</h4>
-       <h4 class="font-semibold text-xl mb-6 nav-en hidden flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5"></i>Access &amp; Hours</h4>
-       <div class="space-y-8">
-        <div>
-         <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-ja">ZŠ</p>
-         <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-en hidden">Address</p>
-         <p class="text-base opacity-85 mb-6 nav-ja">§151-0051<br>
-           “Œ‹“sa’J‹æç‘Êƒ–’J3’š–Ú13-14 401†º</p>
-         <p class="text-base opacity-85 mb-6 nav-en hidden">151-0051<br>
-           3-13-14 Sendagaya, Shibuya-ku, Tokyo 401</p><a href="https://maps.app.goo.gl/RQJHBzHaBEqgsQEV8?g_st=ac" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 rounded-full font-semibold transition-all hover:opacity-80 nav-ja" style="background: rgba(184, 149, 106, 0.1); color: #b8956a; border: 1px solid #b8956a;">?? Googleƒ}ƒbƒv‚ÅŒ©‚é</a> <a href="https://maps.app.goo.gl/RQJHBzHaBEqgsQEV8?g_st=ac" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 rounded-full font-semibold transition-all hover:opacity-80 nav-en hidden" style="background: rgba(184, 149, 106, 0.1); color: #b8956a; border: 1px solid #b8956a;">?? View on Google Maps</a>
-        </div>
-        <div>
-         <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-ja">ƒAƒNƒZƒX</p>
-         <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-en hidden">Access</p>
-         <p class="text-base opacity-85 nav-ja">“Œ‹ƒƒgƒ•›“sSüu–kQ“¹‰wv“k•à30•b<br>
-           JRRèüu‘ãX–Ø‰wv“k•à10•ª</p>
-         <p class="text-base opacity-85 nav-en hidden">30 sec walk from Kita-Sando Station (Tokyo Metro Fukutoshin Line)<br>
-           10 min walk from Yoyogi Station (JR Yamanote Line)</p>
-        </div>
-        <div>
-         <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-ja">‰c‹ÆŠÔ</p>
-         <p class="text-sm font-semibold opacity-60 uppercase mb-2 nav-en hidden">Hours</p>
-         <p class="text-base opacity-85 nav-ja">10:00`22:00iÅIó•t 21:00j<br><span class="text-sm">’è‹x“úF‰Î—j“ú</span></p>
-         <p class="text-base opacity-85 nav-en hidden">10:00 - 22:00 (Last appointment: 21:00)<br><span class="text-sm">Closed: Tuesdays</span></p>
-        </div>
-       </div>
-      </div>
-      <div>
-       <h4 class="font-semibold text-xl mb-6 nav-ja flex items-center gap-2"><i data-lucide="phone" class="w-5 h-5"></i>‚¨–â‚¢‡‚í‚¹</h4>
-       <h4 class="font-semibold text-xl mb-6 nav-en hidden flex items-center gap-2"><i data-lucide="phone" class="w-5 h-5"></i>Contact</h4>
-       <div class="p-8 rounded-2xl text-center" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.05);">
-        <p class="text-sm opacity-70 mb-6 nav-ja">‚¨“d˜b‚Ü‚½‚ÍLINE‚æ‚è‚¨–â‚¢‡‚í‚¹‚­‚¾‚³‚¢B</p>
-        <p class="text-sm opacity-70 mb-6 nav-en hidden">Please contact us via phone or LINE.</p><a href="tel:09033702270" class="text-3xl font-bold block mb-8 hover:opacity-70 transition-opacity">090-3370-2270</a>
-        <div class="flex flex-col gap-3">
-         <a href="https://line.me/R/ti/p/@521hhscf" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full font-semibold transition-all hover:opacity-80 nav-ja" style="background: #00b900; color: white;">? LINE‚Å–â‚¢‡‚í‚¹</a> <a href="https://line.me/R/ti/p/@521hhscf" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full font-semibold transition-all hover:opacity-80 nav-en hidden" style="background: #00b900; color: white;">? Contact via LINE</a>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Footer -->
-   <footer id="footer" class="py-12 px-6 md:px-12 border-t mt-auto" style="border-color: rgba(0,0,0,0.1);">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-     <p id="footer-logo" class="elegant-title text-xl font-semibold"></p>
-     <p class="text-sm opacity-60 nav-ja">Copyright ? 2026 Scarlett</p>
-     <p class="text-sm opacity-60 nav-en hidden">Copyright ? 2026 Scarlett</p>
-    </div>
-   </footer>
-  </div>
-  <script>
-    const logoSVG = `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/>
-      <path d="M20 10 L28 30 L12 30 Z" fill="currentColor" opacity="0.8"/>
-      <circle cx="20" cy="22" r="3" fill="white"/>
-    </svg>`;
+     </footer>
+   </div>
+   <script>
+     const logoSVG = `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/>
+       <path d="M20 10 L28 30 L12 30 Z" fill="currentColor" opacity="0.8"/>
+       <circle cx="20" cy="22" r="3" fill="white"/>
+     </svg>`;
 
-    const defaultConfig = {
-      // Colors
-      background_color: "#f5f5f5",
-      surface_color: "#ffffff",
-      text_color: "#1a1410",
-      primary_color: "#b8956a",
-      secondary_color: "#d4a574",
-      // Typography
-      font_family: "Noto Serif JP",
-      font_size: 16,
-      // Content
-      site_title: "Scarlett",
-      hero_heading: "”ü‚µ‚³‚Í“à–Ê‚©‚ç—‘z‚Ì”§‚Ö",
-      hero_heading_en: "Beauty from Within, Perfect Skin as the Result",
-      hero_heading_zh: "˜¸“à§ŠO“I”ü?C??—‘z”§?",
-      hero_subheading: "Scarlett –kQ“¹‚ÍA\"Œ‹‰ÊEˆÀSEˆÀ‘S\"‚ğ‘åØ‚É‚µ‚È‚ª‚çA‚»‚Ì“ú‚Ì”§Eg‘ÌES‚ÉŠñ‚è“Y‚¤ƒPƒA‚ğ‚²’ñ‹Ÿ‚µ‚Ü‚·B",
-      hero_subheading_en: "Scarlett Kita-Sando provides care that aligns with your skin, body, and heart of the day, prioritizing \"results, peace of mind, and safety.\"",
-      hero_subheading_zh: "Scarlett –kQ“¹d?\"?‰ÊAˆÀSAˆÀ‘S\"C’ñ‹Ÿ?S“I?—C???“–“ú“I”§?Ag‘Ì˜aS—B",
-      concept_title: "ˆãt’ñŒg‚É‚æ‚éˆÀS‚ÆŠmÀ‚ÈŒ‹‰Ê",
-      concept_title_en: "Assured Safety and Certain Results Through Medical Partnership",
-      concept_title_zh: "’Ê?ˆãŠw‡ì?•ÛˆÀ‘S˜a?’è“I?‰Ê",
-      concept_text: "Scarlett‚ÍAŒÚ–âˆãt’ñŒg‚É‚æ‚éˆÀS‚Ì‚à‚ÆAˆÀ‘S«‚ÆÅ‘¬‚Ì”§‰ü‘PŒø‰Ê‚ğ’Ç‹‚·‚éƒtƒFƒCƒVƒƒƒ‹“Á‰»ƒTƒƒ“‚Å‚·B",
-      concept_text_en: "Scarlett is a facial-specialized salon that pursues safety and rapid skin improvement results under the assurance of medical advisor partnership.",
-      concept_text_zh: "Scarlett¥ˆê‰Æ??˜¸––Ê•”?—“I¹?CİˆãŠw??‡ì“I•Ûá‰ºC’Ç‹ˆÀ‘S˜a‰õ‘¬“I”§?‰ü‘PÁ‰ÊB",
-      strength1_title: "ƒtƒFƒCƒVƒƒƒ‹”§¿‰ü‘P‚É“Á‰»",
-      strength1_title_en: "Specialized in Facial Skin Quality Improvement",
-      strength1_title_zh: "??–Ê•”??‰ü‘P",
-      strength2_title: "ˆã—Ã’ñŒg‚É‚æ‚éˆÀS",
-      strength2_title_en: "Peace of Mind Through Medical Partnership",
-      strength2_title_zh: "’Ê?ˆã?‡ì?“¾ˆÀS",
-      strength3_title: "‘¦Œø«‚Ì‚‚¢ƒƒjƒ…[",
-      strength3_title_en: "High-Effectiveness Menu Options",
-      strength3_title_zh: "‚Á”\Ø???",
-      lang: "ja" // Current language
-    };
+     const defaultConfig = {
+       // Colors
+       background_color: "#f5f5f5",
+       surface_color: "#ffffff",
+       text_color: "#1a1410",
+       primary_color: "#b8956a",
+       secondary_color: "#d4a574",
+       // Typography
+       font_family: "Noto Serif JP",
+       font_size: 16,
+       // Content
+       site_title: "Scarlett",
+       hero_heading: "ç¾ã—ã•ã¯å†…é¢ã‹ã‚‰ç†æƒ³ã®è‚Œã¸",
+       hero_heading_en: "Beauty from Within, Perfect Skin as the Result",
+       hero_subheading: "Scarlett åŒ—å‚é“ã¯ã€\"çµæœãƒ»å®‰å¿ƒãƒ»å®‰å…¨\"ã‚’å¤§åˆ‡ã«ã—ãªãŒã‚‰ã€ãã®æ—¥ã®è‚Œãƒ»èº«ä½“ãƒ»å¿ƒã«å¯„ã‚Šæ·»ã†ã‚±ã‚¢ã‚’ã”æä¾›ã—ã¾ã™ã€‚",
+       hero_subheading_en: "Scarlett Kita-Sando provides care that aligns with your skin, body, and heart of the day, prioritizing \"results, peace of mind, and safety.\"",
+       concept_title: "åŒ»å¸«ææºã«ã‚ˆã‚‹å®‰å¿ƒã¨ç¢ºå®Ÿãªçµæœ",
+       concept_title_en: "Assured Safety and Certain Results Through Medical Partnership",
+       concept_text: "Scarlettã¯ã€é¡§å•åŒ»å¸«ææºã«ã‚ˆã‚‹å®‰å¿ƒã®ã‚‚ã¨ã€å®‰å…¨æ€§ã¨æœ€é€Ÿã®è‚Œæ”¹å–„åŠ¹æœã‚’è¿½æ±‚ã™ã‚‹ãƒ•ã‚§ã‚¤ã‚·ãƒ£ãƒ«ç‰¹åŒ–ã‚µãƒ­ãƒ³ã§ã™ã€‚",
+       concept_text_en: "Scarlett is a facial-specialized salon that pursues safety and rapid skin improvement results under the assurance of medical advisor partnership.",
+       strength1_title: "ãƒ•ã‚§ã‚¤ã‚·ãƒ£ãƒ«è‚Œè³ªæ”¹å–„ã«ç‰¹åŒ–",
+       strength1_title_en: "Specialized in Facial Skin Quality Improvement",
+       strength2_title: "åŒ»ç™‚ææºã«ã‚ˆã‚‹å®‰å¿ƒ",
+       strength2_title_en: "Peace of Mind Through Medical Partnership",
+       strength3_title: "å³åŠ¹æ€§ã®é«˜ã„ãƒ¡ãƒ‹ãƒ¥ãƒ¼",
+       strength3_title_en: "High-Effectiveness Menu Options",
+       lang: "ja" // Current language
+     };
 
-    let currentLang = "ja";
+     let currentLang = "ja";
 
-    function toggleLanguage() {
-      currentLang = currentLang === "ja" ? "en" : currentLang === "en" ? "zh" : "ja";
-      updateLanguage();
-    }
+     function toggleLanguage() {
+       currentLang = currentLang === "ja" ? "en" : "ja";
+       updateLanguage();
+     }
 
-    function updateLanguage() {
-      // Toggle visibility
-      document.querySelectorAll(".nav-ja").forEach(el => {
-        el.classList.toggle("hidden", currentLang === "en" || currentLang === "zh");
-      });
-      document.querySelectorAll(".nav-en").forEach(el => {
-        el.classList.toggle("hidden", currentLang === "ja" || currentLang === "zh");
-      });
-      document.querySelectorAll(".nav-zh").forEach(el => {
-        el.classList.toggle("hidden", currentLang !== "zh");
-      });
+     function updateLanguage() {
+       // Toggle visibility
+       document.querySelectorAll(".nav-ja").forEach(el => {
+         el.classList.toggle("hidden", currentLang === "en");
+       });
+       document.querySelectorAll(".nav-en").forEach(el => {
+         el.classList.toggle("hidden", currentLang === "ja");
+       });
 
-      // Update content
-      const heroTitle = document.getElementById("hero-title");
-      const heroDesc = document.getElementById("hero-desc");
-      const conceptTitle = document.getElementById("concept-title");
-      const conceptText = document.getElementById("concept-text");
-      const strength1 = document.getElementById("strength1_title");
-      const strength2 = document.getElementById("strength2_title");
-      const strength3 = document.getElementById("strength3_title");
+       // Update content
+       const heroTitle = document.getElementById("hero-title");
+       const heroDesc = document.getElementById("hero-desc");
+       const conceptTitle = document.getElementById("concept-title");
+       const conceptText = document.getElementById("concept-text");
+       const strength1 = document.getElementById("strength1_title");
+       const strength2 = document.getElementById("strength2_title");
+       const strength3 = document.getElementById("strength3_title");
 
-      if (currentLang === "en") {
-        heroTitle.textContent = defaultConfig.hero_heading_en;
-        heroDesc.textContent = defaultConfig.hero_subheading_en;
-        conceptTitle.textContent = defaultConfig.concept_title_en;
-        conceptText.textContent = defaultConfig.concept_text_en;
-        strength1.textContent = defaultConfig.strength1_title_en;
-        strength2.textContent = defaultConfig.strength2_title_en;
-        strength3.textContent = defaultConfig.strength3_title_en;
-      } else if (currentLang === "zh") {
-        heroTitle.textContent = defaultConfig.hero_heading_zh;
-        heroDesc.textContent = defaultConfig.hero_subheading_zh;
-        conceptTitle.textContent = defaultConfig.concept_title_zh;
-        conceptText.textContent = defaultConfig.concept_text_zh;
-        strength1.textContent = defaultConfig.strength1_title_zh;
-        strength2.textContent = defaultConfig.strength2_title_zh;
-        strength3.textContent = defaultConfig.strength3_title_zh;
-      } else {
-        heroTitle.textContent = defaultConfig.hero_heading;
-        heroDesc.textContent = defaultConfig.hero_subheading;
-        conceptTitle.textContent = defaultConfig.concept_title;
-        conceptText.textContent = defaultConfig.concept_text;
-        strength1.textContent = defaultConfig.strength1_title;
-        strength2.textContent = defaultConfig.strength2_title;
-        strength3.textContent = defaultConfig.strength3_title;
-      }
-    }
+       if (currentLang === "en") {
+         heroTitle.textContent = defaultConfig.hero_heading_en;
+         heroDesc.textContent = defaultConfig.hero_subheading_en;
+         conceptTitle.textContent = defaultConfig.concept_title_en;
+         conceptText.textContent = defaultConfig.concept_text_en;
+         strength1.textContent = defaultConfig.strength1_title_en;
+         strength2.textContent = defaultConfig.strength2_title_en;
+         strength3.textContent = defaultConfig.strength3_title_en;
+       } else {
+         heroTitle.textContent = defaultConfig.hero_heading;
+         heroDesc.textContent = defaultConfig.hero_subheading;
+         conceptTitle.textContent = defaultConfig.concept_title;
+         conceptText.textContent = defaultConfig.concept_text;
+         strength1.textContent = defaultConfig.strength1_title;
+         strength2.textContent = defaultConfig.strength2_title;
+         strength3.textContent = defaultConfig.strength3_title;
+       }
+     }
 
-    async function onConfigChange(config) {
-      const c = { ...defaultConfig, ...config };
-      const baseFontStack = "'Noto Serif JP', serif";
-      const fontStack = `'${c.font_family}', ${baseFontStack}`;
-      const baseSize = c.font_size;
+     async function onConfigChange(config) {
+       const c = { ...defaultConfig, ...config };
+       const baseFontStack = "'Noto Serif JP', serif";
+       const fontStack = `'${c.font_family}', ${baseFontStack}`;
+       const baseSize = c.font_size;
 
-      // Apply Colors
-      const app = document.getElementById('app');
-      app.style.backgroundColor = c.background_color;
-      app.style.color = c.text_color;
+       // Apply Colors
+       const app = document.getElementById('app');
+       app.style.backgroundColor = c.background_color;
+       app.style.color = c.text_color;
 
-      const navbar = document.getElementById('navbar');
-      navbar.style.backgroundColor = `${c.background_color}F0`;
-      navbar.style.backdropFilter = "blur(12px)";
+       const navbar = document.getElementById('navbar');
+       navbar.style.backgroundColor = `${c.background_color}F0`;
+       navbar.style.backdropFilter = "blur(12px)";
 
-      const primaryBtns = [document.getElementById('nav-cta'), document.getElementById('main-cta')];
-      primaryBtns.forEach(btn => {
-        btn.style.backgroundColor = c.primary_color;
-        btn.style.color = "#ffffff";
-      });
+       const primaryBtns = [document.getElementById('nav-cta'), document.getElementById('main-cta')];
+       primaryBtns.forEach(btn => {
+         btn.style.backgroundColor = c.primary_color;
+         btn.style.color = "#ffffff";
+       });
 
-      const secBtn = document.getElementById('sec-cta');
-      secBtn.style.borderColor = c.primary_color;
-      secBtn.style.color = c.primary_color;
+       const secBtn = document.getElementById('sec-cta');
+       secBtn.style.borderColor = c.primary_color;
+       secBtn.style.color = c.primary_color;
 
-      const heroBg = document.querySelector('#hero .absolute');
-      if (heroBg) {
-        heroBg.style.background = `radial-gradient(ellipse at center, ${c.secondary_color}30, transparent 70%)`;
-      }
+       const heroBg = document.querySelector('#hero .absolute');
+       if (heroBg) {
+         heroBg.style.background = `radial-gradient(ellipse at center, ${c.secondary_color}30, transparent 70%)`;
+       }
 
-      // Apply Typography
-      app.style.fontFamily = fontStack;
+       // Apply Typography
+       app.style.fontFamily = fontStack;
 
-      const elegantTitles = document.querySelectorAll('.elegant-title');
-      elegantTitles.forEach(el => {
-        el.style.fontSize = el.id === 'nav-logo' || el.id === 'footer-logo' ? `${baseSize * 1.5}px` : 
-                           el.id === 'hero-title' ? `${baseSize * 3.5}px` :
-                           el.id === 'concept-title' ? `${baseSize * 2.5}px` : `${baseSize * 2}px`;
-        el.style.color = c.text_color;
-      });
+       const elegantTitles = document.querySelectorAll('.elegant-title');
+       elegantTitles.forEach(el => {
+         el.style.fontSize = el.id === 'nav-logo' || el.id === 'footer-logo' ? `${baseSize * 1.5}px` : 
+                            el.id === 'hero-title' ? `${baseSize * 3.5}px` :
+                            el.id === 'concept-title' ? `${baseSize * 2.5}px` : `${baseSize * 2}px`;
+         el.style.color = c.text_color;
+       });
 
-      document.getElementById('hero-title').style.fontSize = `${baseSize * 3.5}px`;
-      document.getElementById('hero-title').style.color = c.text_color;
-      
-      document.getElementById('hero-desc').style.fontSize = `${baseSize * 1.125}px`;
-      document.getElementById('hero-desc').style.color = c.text_color;
+       document.getElementById('hero-title').style.fontSize = `${baseSize * 3.5}px`;
+       document.getElementById('hero-title').style.color = c.text_color;
+       
+       document.getElementById('hero-desc').style.fontSize = `${baseSize * 1.125}px`;
+       document.getElementById('hero-desc').style.color = c.text_color;
 
-      document.getElementById('concept-text').style.fontSize = `${baseSize * 1.125}px`;
-      document.getElementById('concept-text').style.color = c.text_color;
+       document.getElementById('concept-text').style.fontSize = `${baseSize * 1.125}px`;
+       document.getElementById('concept-text').style.color = c.text_color;
 
-      // Apply Content
-      document.getElementById('nav-logo').textContent = c.site_title;
-      document.getElementById('footer-logo').textContent = c.site_title;
-      
-      // Update based on current language
-      updateLanguage();
+       // Apply Content
+       document.getElementById('nav-logo').textContent = c.site_title;
+       document.getElementById('footer-logo').textContent = c.site_title;
+       
+       // Update based on current language
+       updateLanguage();
 
-      lucide.createIcons();
-    }
+       lucide.createIcons();
+     }
 
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [
-          { 
-            get: () => config.background_color || defaultConfig.background_color, 
-            set: (v) => window.elementSdk.setConfig({ background_color: v }) 
-          },
-          { 
-            get: () => config.surface_color || defaultConfig.surface_color, 
-            set: (v) => window.elementSdk.setConfig({ surface_color: v }) 
-          },
-          { 
-            get: () => config.text_color || defaultConfig.text_color, 
-            set: (v) => window.elementSdk.setConfig({ text_color: v }) 
-          },
-          { 
-            get: () => config.primary_color || defaultConfig.primary_color, 
-            set: (v) => window.elementSdk.setConfig({ primary_color: v }) 
-          },
-          { 
-            get: () => config.secondary_color || defaultConfig.secondary_color, 
-            set: (v) => window.elementSdk.setConfig({ secondary_color: v }) 
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => config.font_family || defaultConfig.font_family,
-          set: (v) => window.elementSdk.setConfig({ font_family: v })
-        },
-        fontSizeable: {
-          get: () => config.font_size || defaultConfig.font_size,
-          set: (v) => window.elementSdk.setConfig({ font_size: v })
-        }
-      };
-    }
+     function mapToCapabilities(config) {
+       return {
+         recolorables: [
+           { 
+             get: () => config.background_color || defaultConfig.background_color, 
+             set: (v) => window.elementSdk.setConfig({ background_color: v }) 
+           },
+           { 
+             get: () => config.surface_color || defaultConfig.surface_color, 
+             set: (v) => window.elementSdk.setConfig({ surface_color: v }) 
+           },
+           { 
+             get: () => config.text_color || defaultConfig.text_color, 
+             set: (v) => window.elementSdk.setConfig({ text_color: v }) 
+           },
+           { 
+             get: () => config.primary_color || defaultConfig.primary_color, 
+             set: (v) => window.elementSdk.setConfig({ primary_color: v }) 
+           },
+           { 
+             get: () => config.secondary_color || defaultConfig.secondary_color, 
+             set: (v) => window.elementSdk.setConfig({ secondary_color: v }) 
+           }
+         ],
+         borderables: [],
+         fontEditable: {
+           get: () => config.font_family || defaultConfig.font_family,
+           set: (v) => window.elementSdk.setConfig({ font_family: v })
+         },
+         fontSizeable: {
+           get: () => config.font_size || defaultConfig.font_size,
+           set: (v) => window.elementSdk.setConfig({ font_size: v })
+         }
+       };
+     }
 
-    function mapToEditPanelValues(config) {
-      const c = { ...defaultConfig, ...config };
-      return new Map([
-        ["site_title", c.site_title],
-        ["hero_heading", c.hero_heading],
-        ["hero_heading_en", c.hero_heading_en],
-        ["hero_subheading", c.hero_subheading],
-        ["hero_subheading_en", c.hero_subheading_en],
-        ["concept_title", c.concept_title],
-        ["concept_title_en", c.concept_title_en],
-        ["concept_text", c.concept_text],
-        ["concept_text_en", c.concept_text_en],
-        ["strength1_title", c.strength1_title],
-        ["strength1_title_en", c.strength1_title_en],
-        ["strength2_title", c.strength2_title],
-        ["strength2_title_en", c.strength2_title_en],
-        ["strength3_title", c.strength3_title],
-        ["strength3_title_en", c.strength3_title_en]
-      ]);
-    }
+     function mapToEditPanelValues(config) {
+       const c = { ...defaultConfig, ...config };
+       return new Map([
+         ["site_title", c.site_title],
+         ["hero_heading", c.hero_heading],
+         ["hero_heading_en", c.hero_heading_en],
+         ["hero_subheading", c.hero_subheading],
+         ["hero_subheading_en", c.hero_subheading_en],
+         ["concept_title", c.concept_title],
+         ["concept_title_en", c.concept_title_en],
+         ["concept_text", c.concept_text],
+         ["concept_text_en", c.concept_text_en],
+         ["strength1_title", c.strength1_title],
+         ["strength1_title_en", c.strength1_title_en],
+         ["strength2_title", c.strength2_title],
+         ["strength2_title_en", c.strength2_title_en],
+         ["strength3_title", c.strength3_title],
+         ["strength3_title_en", c.strength3_title_en]
+       ]);
+     }
 
-    // Initialize SDK
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
-      });
-    } else {
-      // Fallback for direct viewing
-      onConfigChange(defaultConfig);
-    }
+     // Initialize SDK
+     if (window.elementSdk) {
+       window.elementSdk.init({
+         defaultConfig,
+         onConfigChange,
+         mapToCapabilities,
+         mapToEditPanelValues
+       });
+     } else {
+       // Fallback for direct viewing
+       onConfigChange(defaultConfig);
+     }
 
-    // Language toggle button
-    document.addEventListener('DOMContentLoaded', () => {
-      // Initialize the nav title
-      document.getElementById('nav-logo').textContent = defaultConfig.site_title;
-      document.getElementById('footer-logo').textContent = defaultConfig.site_title;
+     // Language toggle button
+     document.addEventListener('DOMContentLoaded', () => {
+       // Initialize the nav title
+       document.getElementById('nav-logo').textContent = defaultConfig.site_title;
+       document.getElementById('footer-logo').textContent = defaultConfig.site_title;
 
-      const langToggle = document.getElementById('lang-toggle');
-      if (langToggle) {
-        langToggle.addEventListener('click', toggleLanguage);
-      }
+       const langToggle = document.getElementById('lang-toggle');
+       if (langToggle) {
+         langToggle.addEventListener('click', toggleLanguage);
+       }
 
-      const mobileLangToggle = document.getElementById('mobile-lang-toggle');
-      if (mobileLangToggle) {
-        mobileLangToggle.addEventListener('click', () => {
-          toggleLanguage();
-          closeMobileMenu();
-        });
-      }
+       const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+       if (mobileLangToggle) {
+         mobileLangToggle.addEventListener('click', () => {
+           toggleLanguage();
+           closeMobileMenu();
+         });
+       }
 
-      // Mobile menu toggle
-      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          mobileMenu.classList.toggle('hidden');
-        });
+       // Mobile menu toggle
+       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+       const mobileMenu = document.getElementById('mobile-menu');
+       
+       if (mobileMenuBtn && mobileMenu) {
+         mobileMenuBtn.addEventListener('click', (e) => {
+           e.stopPropagation();
+           mobileMenu.classList.toggle('hidden');
+         });
 
-        // Close menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-          });
-        });
+         // Close menu when a link is clicked
+         mobileMenu.querySelectorAll('a').forEach(link => {
+           link.addEventListener('click', () => {
+             mobileMenu.classList.add('hidden');
+           });
+         });
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-          if (!mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
-            mobileMenu.classList.add('hidden');
-          }
-        });
-      }
+         // Close menu when clicking outside
+         document.addEventListener('click', (e) => {
+           if (!mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
+             mobileMenu.classList.add('hidden');
+           }
+         });
+       }
 
-      function closeMobileMenu() {
-        if (mobileMenu) {
-          mobileMenu.classList.add('hidden');
-        }
-      }
+       function closeMobileMenu() {
+         if (mobileMenu) {
+           mobileMenu.classList.add('hidden');
+         }
+       }
 
-      const navCta = document.getElementById('nav-cta');
-      const mainCta = document.getElementById('main-cta');
-      
-      navCta.textContent = currentLang === 'ja' ? '‚²—\–ñ' : 'Book Now';
-      mainCta.textContent = currentLang === 'ja' ? '‚²—\–ñ‚Í‚±‚¿‚ç' : 'Book Now';
-      
-      function scrollToCTA() {
-        const ctaSection = document.getElementById('cta-section');
-        if (ctaSection) {
-          ctaSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-      
-      if (navCta) {
-        navCta.addEventListener('click', scrollToCTA);
-        navCta.style.cursor = "pointer";
-      }
-      if (mainCta) {
-        mainCta.addEventListener('click', scrollToCTA);
-        mainCta.style.cursor = "pointer";
-      }
+       const navCta = document.getElementById('nav-cta');
+       const mainCta = document.getElementById('main-cta');
+       
+       navCta.textContent = currentLang === 'ja' ? 'ã”äºˆç´„' : 'Book Now';
+       mainCta.textContent = currentLang === 'ja' ? 'ã”äºˆç´„ã¯ã“ã¡ã‚‰' : 'Book Now';
+       
+       function scrollToCTA() {
+         const ctaSection = document.getElementById('cta-section');
+         if (ctaSection) {
+           ctaSection.scrollIntoView({ behavior: 'smooth' });
+         }
+       }
+       
+       if (navCta) {
+         navCta.addEventListener('click', scrollToCTA);
+         navCta.style.cursor = "pointer";
+       }
+       if (mainCta) {
+         mainCta.addEventListener('click', scrollToCTA);
+         mainCta.style.cursor = "pointer";
+       }
 
-      lucide.createIcons();
-    });
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a043e150a9a2c64c',t:'MTc4MDIwODUwNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+       lucide.createIcons();
+     });
+   </script>
+ </body>
 </html>
